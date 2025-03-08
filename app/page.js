@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <>
-      <header className="relative h-[200px] sm:h-[200px] bg-cover bg-center bg-[#fd9800] flex items-center justify-center text-white">
+      <header className="relative h-[100px] sm:h-[150px] bg-cover bg-center bg-[#fd9800] flex items-center justify-center text-white">
         {/* Overlay for better text readability */}
         <h1 className="relative text-3xl sm:text-4xl font-bold text-center px-4">
           Courses
@@ -27,18 +27,18 @@ export default function Home() {
             <input
               type="text"
               placeholder="Search courses..."
-              className="w-full sm:w-2/3 p-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:border-[#fd9800] focus:text-[#fd9800] focus:outline-none"
+              className="w-full p-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:border-[#fd9800] focus:text-[#fd9800] focus:outline-none"
             />
-            <select className="w-full sm:w-1/3 p-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:border-[#fd9800] focus:text-[#fd9800] focus:outline-none">
+          </div>
+
+          {/* Other Dropdowns - All in one row on larger screens */}
+          <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
+            <select className="w-full p-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:border-[#fd9800] focus:text-[#fd9800] focus:outline-none">
               <option value="">Select Country</option>
               <option value="USA">USA</option>
               <option value="UK">UK</option>
               <option value="Canada">Canada</option>
             </select>
-          </div>
-
-          {/* Other Dropdowns - All in one row on larger screens */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <select className="w-full p-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:border-[#fd9800] focus:text-[#fd9800] focus:outline-none">
               <option value="">Select University</option>
               <option value="Harvard">Harvard</option>
@@ -83,10 +83,6 @@ export default function Home() {
                 <p className="text-sm text-black">
                   <span className="font-bold">Scholarship:</span>{" "}
                   {course.scholarship}
-                </p>
-                <p className="text-sm font-bold text-black">
-                  <span className="font-bold">Tution Fee:</span>
-                  {course.tuitionFees}
                 </p>
 
                 <div className="flex gap-2 items-center">
