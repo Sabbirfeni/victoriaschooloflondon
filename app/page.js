@@ -1,14 +1,80 @@
+"use client";
+import { courses } from "@/database";
+
 import Image from "next/image";
+import FilterForm from "./forms/filter-form";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  const courses = Array(6).fill({
-    courseName: "Placeholder Course",
-    university: "Placeholder University",
-    campus: "Main Campus",
-    level: "Bachelor's",
-    scholarship: "Up to 50%",
-    tuitionFees: "10,000",
-  });
+  const [selectedCountry, setSelectedCountry] = useState(null);
+  const [selectedUni, setSelectedUni] = useState(null);
+  const [selectedCampus, setSelectedCampus] = useState(null);
+  const [selectedLevel, setSelectedLevel] = useState(null);
+
+  console.log(selectedCountry, selectedUni, selectedCampus, selectedLevel);
+
+  const countries = [...new Set(courses.map((course) => course.country))];
+  const universities = [];
+  const campuses = [];
+  const levels = [];
+
+  let searchedCourses = courses;
+  if (selectedCountry) {
+    searchedCourses = courses.filter(
+      (course) => course.country == selectedCountry
+    );
+    searchedCourses.forEach((course) => {
+      if (course.country == selectedCountry) {
+        if (!universities.includes(course.university)) {
+          universities.push(course.university);
+        }
+      }
+    });
+  }
+  if (selectedUni) {
+    searchedCourses = searchedCourses.filter(
+      (course) => course.university == selectedUni
+    );
+    searchedCourses.forEach((course) => {
+      if (course.university == selectedUni) {
+        if (!campuses.includes(course.campus)) {
+          campuses.push(course.campus);
+        }
+      }
+    });
+  }
+  if (selectedCampus) {
+    searchedCourses = searchedCourses.filter(
+      (course) => course.campus == selectedCampus
+    );
+    searchedCourses.forEach((course) => {
+      if (course.campus == selectedCampus) {
+        if (!levels.includes(course.level)) {
+          levels.push(course.level);
+        }
+      }
+    });
+  }
+  if (selectedLevel) {
+    searchedCourses = searchedCourses.filter(
+      (course) => course.level == selectedLevel
+    );
+  }
+
+  useEffect(() => {
+    setSelectedUni(null);
+    setSelectedCampus(null);
+    setSelectedLevel(null);
+  }, [selectedCountry]);
+
+  useEffect(() => {
+    setSelectedCampus(null);
+    setSelectedLevel(null);
+  }, [selectedUni]);
+
+  useEffect(() => {
+    setSelectedLevel(null);
+  }, [selectedCampus]);
 
   return (
     <>
@@ -20,52 +86,21 @@ export default function Home() {
       </header>
 
       {/* Form */}
-      <div className="bg-gray-100 p-6 shadow-lg">
-        <form className="space-y-4 max-w-6xl mx-auto">
-          {/* Search Field - Full width on mobile, flex row on larger screens */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            <input
-              type="text"
-              placeholder="Search courses..."
-              className="w-full p-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:border-[#fd9800] focus:text-[#fd9800] focus:outline-none"
-            />
-          </div>
-
-          {/* Other Dropdowns - All in one row on larger screens */}
-          <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
-            <select className="w-full p-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:border-[#fd9800] focus:text-[#fd9800] focus:outline-none">
-              <option value="">Select Country</option>
-              <option value="USA">USA</option>
-              <option value="UK">UK</option>
-              <option value="Canada">Canada</option>
-            </select>
-            <select className="w-full p-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:border-[#fd9800] focus:text-[#fd9800] focus:outline-none">
-              <option value="">Select University</option>
-              <option value="Harvard">Harvard</option>
-              <option value="Oxford">Oxford</option>
-              <option value="Stanford">Stanford</option>
-            </select>
-
-            <select className="w-full p-3 border border-gray-300 text-black outline-none rounded-lg focus:ring-2 focus:border-[#fd9800] focus:text-[#fd9800] focus:outline-none">
-              <option value="">Select Campus</option>
-              <option value="Main">Main Campus</option>
-              <option value="Downtown">Downtown Campus</option>
-            </select>
-
-            <select className="w-full p-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:border-[#fd9800] focus:text-[#fd9800] focus:outline-none">
-              <option value="">Select Level</option>
-              <option value="Bachelors">Bachelors</option>
-              <option value="Masters">Masters</option>
-              <option value="PhD">PhD</option>
-            </select>
-          </div>
-        </form>
-      </div>
+      <FilterForm
+        countries={countries}
+        universities={universities}
+        campuses={campuses}
+        levels={levels}
+        setSelectedCountry={setSelectedCountry}
+        setSelectedUni={setSelectedUni}
+        setSelectedCampus={setSelectedCampus}
+        setSelectedLevel={setSelectedLevel}
+      />
       {/* Course list */}
       <div className="p-6 bg-gray-100 min-h-screen">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {courses.map((course, index) => (
+            {searchedCourses.map((course, index) => (
               <div key={index} className="bg-white p-6 shadow-lg rounded-2xl">
                 <h2 className="text-xl text-black font-semibold">
                   {course.courseName}
@@ -91,7 +126,7 @@ export default function Home() {
                     {course.tuitionFees}
                   </button>
                   <a
-                    href="#"
+                    href="/apply"
                     className="mt-4 w-full text-center cursor-pointer  text-[#fd9800] py-2 font-bold rounded-lg"
                   >
                     Apply Now
