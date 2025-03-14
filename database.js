@@ -10,10 +10,10 @@
 
 const courses = [
   {
-    courseName: "Course 1",
+    courseName: "Computer Science Engineering",
     country: "UK",
-    university: "Placeholder University",
-    campus: "Main Campus",
+    university: "Birmighhum University",
+    campus: "London",
     level: "Bachelor's",
     scholarship: "Up to 50%",
     tuitionFees: "10,000",
