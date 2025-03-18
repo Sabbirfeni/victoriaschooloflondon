@@ -113,7 +113,7 @@ const courses = [
     courseName: "MSc in Strategic Finance",
     country: "Hungary",
     university: "International Business School",
-    campus: "International Business School",
+    campus: "Budapest",
     level: "Postgraduate",
     scholarship: "TBA",
     tuitionFees: "€12800",
