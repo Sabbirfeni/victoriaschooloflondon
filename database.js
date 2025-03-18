@@ -168,7 +168,7 @@ const courses = [
     country: "Hungary",
     university: "University of Debrecen",
     campus: "Hungary",
-    level: "Hungary",
+    level: "Postgraduate",
     scholarship: "30% of annual fees",
     tuitionFees: "€7500",
   },
