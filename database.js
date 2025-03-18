@@ -112,7 +112,7 @@ const courses = [
   {
     courseName: "MSc in Strategic Finance",
     country: "Hungary",
-    university: "Example University",
+    university: "International Business School",
     campus: "International Business School",
     level: "Postgraduate",
     scholarship: "TBA",
