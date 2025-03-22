@@ -17,26 +17,26 @@ function ApplyPage() {
         </h1>
       </header>
 
-      <div className="p-6 bg-gray-100 min-h-screen text-black font-bold">
+      <div className="p-4 md:p-6 bg-gray-100 min-h-screen text-black font-bold">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Left Column - Cards */}
-          <div className="space-y-3">
+          <div className="space-y-1 md:space-y-3">
             <div className="bg-white p-4 rounded-xl shadow-md text-xl">
               {course.courseName}
             </div>
-            <div className="md:flex items-center gap-3">
-              <div className="bg-white p-4 rounded-xl shadow-md flex-1">
+            <div className="flex flex-col md:flex-row items-center gap-1 md:gap-3">
+              <div className="bg-white p-4 w-full rounded-xl shadow-md flex-1">
                 {course.university}
               </div>
-              <div className="bg-white p-4 rounded-xl shadow-md flex-1">
+              <div className="bg-white p-4 w-full rounded-xl shadow-md flex-1">
                 Campus: {course.campus}
               </div>
             </div>
-            <div className="md:flex items-center gap-3">
-              <div className="bg-white p-4 rounded-xl shadow-md flex-1">
+            <div className="flex flex-col md:flex-row items-center gap-1 md:gap-3">
+              <div className="bg-white p-4 w-full rounded-xl shadow-md flex-1">
                 Tution Fees: {course.tuitionFees}
               </div>
-              <div className="bg-white p-4 rounded-xl shadow-md flex-1">
+              <div className="bg-white p-4 w-full rounded-xl shadow-md flex-1">
                 Scholarship: {course.scholarship}
               </div>
             </div>
