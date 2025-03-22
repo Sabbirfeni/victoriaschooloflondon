@@ -1,49 +1,58 @@
+"use client";
+
+import countries from "@/all-countries";
+import { courses } from "@/database";
+import { useParams } from "next/navigation";
 import React from "react";
 
 function ApplyPage() {
+  const { courseId } = useParams();
+  const course = courses.find((course) => course.courseId == courseId);
   return (
     <>
-      <header className="relative h-[100px] sm:h-[150px] bg-cover bg-center bg-[#fd9800] flex items-center justify-center text-white">
+      <header className="relative h-[100px] sm:h-[150px] bg-cover bg-center bg-[#fd9800] flex items-center justify-center text-black">
         {/* Overlay for better text readability */}
         <h1 className="relative text-3xl sm:text-4xl font-bold text-center px-4">
           Apply
         </h1>
       </header>
 
-      <div className="p-6 bg-gray-100 min-h-screen">
+      <div className="p-6 bg-gray-100 min-h-screen text-black font-bold">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Left Column - Cards */}
           <div className="space-y-3">
-            <div className="bg-white p-6 rounded-2xl shadow-md">
-              Card 1 Content
+            <div className="bg-white p-4 rounded-xl shadow-md text-xl">
+              {course.courseName}
             </div>
             <div className="md:flex items-center gap-3">
-              <div className="bg-white p-6 rounded-2xl shadow-md flex-1">
-                Card 2 Content
+              <div className="bg-white p-4 rounded-xl shadow-md flex-1">
+                {course.university}
               </div>
-              <div className="bg-white p-6 rounded-2xl shadow-md flex-1">
-                Card 3 Content
+              <div className="bg-white p-4 rounded-xl shadow-md flex-1">
+                Campus: {course.campus}
               </div>
             </div>
             <div className="md:flex items-center gap-3">
-              <div className="bg-white p-6 rounded-2xl shadow-md flex-1">
-                Card 2 Content
+              <div className="bg-white p-4 rounded-xl shadow-md flex-1">
+                Tution Fees: {course.tuitionFees}
               </div>
-              <div className="bg-white p-6 rounded-2xl shadow-md flex-1">
-                Card 3 Content
+              <div className="bg-white p-4 rounded-xl shadow-md flex-1">
+                Scholarship: {course.scholarship}
               </div>
             </div>
           </div>
 
           {/* Right Column - Form */}
-          <div className="bg-white p-6 rounded-2xl shadow-md">
-            <h2 className="text-xl font-semibold mb-4">Course Application</h2>
+          <div className="bg-white p-6 rounded-xl shadow-md">
+            <h2 className="text-center font-semibold mb-4 text-2xl">
+              Course Application
+            </h2>
             <form className="space-y-4">
               <div>
                 <label className="block text-gray-700">Course</label>
                 <input
                   type="text"
-                  value="MA Social Work"
+                  value={course.courseName}
                   className="w-full p-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:border-[#fd9800] focus:text-[#fd9800] focus:outline-none bg-gray-100"
                   disabled
                 />
@@ -52,7 +61,7 @@ function ApplyPage() {
                 <label className="block text-gray-700">University</label>
                 <input
                   type="text"
-                  value="University of Gloucestershire"
+                  value={course.university}
                   className="w-full p-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:border-[#fd9800] focus:text-[#fd9800] focus:outline-none bg-gray-100"
                   disabled
                 />
@@ -61,7 +70,7 @@ function ApplyPage() {
                 <label className="block text-gray-700">Campus</label>
                 <input
                   type="text"
-                  value="Gloucester"
+                  value={course.campus}
                   className="w-full p-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:border-[#fd9800] focus:text-[#fd9800] focus:outline-none bg-gray-100"
                   disabled
                 />
@@ -76,12 +85,16 @@ function ApplyPage() {
               </div>
               <div>
                 <label className="block text-gray-700">Nationality*</label>
-                <input
-                  type="text"
-                  value="Bangladesh"
-                  className="w-full p-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:border-[#fd9800] focus:text-[#fd9800] focus:outline-none bg-gray-100"
-                  disabled
-                />
+                <select className="w-full p-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:border-[#fd9800] focus:text-[#fd9800] focus:outline-none bg-gray-100">
+                  <option key="bangladesh" value="Bangladesh">
+                    Bangladesh
+                  </option>
+                  {countries.map((country, index) => (
+                    <option key={index} value={country}>
+                      {country}
+                    </option>
+                  ))}
+                </select>
               </div>
               <div>
                 <label className="block text-gray-700">Phone*</label>
@@ -148,7 +161,7 @@ function ApplyPage() {
 
               <button
                 type="submit"
-                className="w-full bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600"
+                className="w-full bg-[#fd9800] text-white p-3 rounded-lg hover:bg-[#fd8b00] cursor-pointer"
               >
                 Submit Application
               </button>

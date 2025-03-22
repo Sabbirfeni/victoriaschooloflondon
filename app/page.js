@@ -21,7 +21,8 @@ export default function Home() {
 
   if (query.trim() !== "") {
     const courses = searchedCourses.filter(
-      (course) => course.courseName.indexOf(query) !== -1
+      (course) =>
+        course.courseName.toLowerCase().indexOf(query.toLowerCase()) !== -1
     );
 
     searchedCourses = courses;
@@ -109,6 +110,14 @@ export default function Home() {
       {/* Course list */}
       <div className="p-6 bg-gray-100 min-h-screen">
         <div className="max-w-6xl mx-auto">
+          {searchedCourses.length == 0 && (
+            <p
+              className="not-found-text"
+              style={{ color: "black", textAlign: "center" }}
+            >
+              No courses found.
+            </p>
+          )}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {searchedCourses.map((course, index) => (
               <div key={index} className="bg-white p-6 shadow-lg rounded-2xl">
@@ -136,7 +145,7 @@ export default function Home() {
                     {course.tuitionFees}
                   </button>
                   <a
-                    href="/apply"
+                    href={`/apply/${course.courseId}`}
                     className="mt-4 w-full text-center cursor-pointer  text-[#fd9800] py-2 font-bold rounded-lg"
                   >
                     Apply Now
