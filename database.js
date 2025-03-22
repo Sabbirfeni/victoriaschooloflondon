@@ -1,3 +1,13 @@
+// {
+//     courseName: "Course 1",
+//     country: "UK",
+//     university: "Placeholder University",
+//     campus: "Main Campus",
+//     level: "Bachelor's",
+//     scholarship: "Up to 50%",
+//     tuitionFees: "10,000",
+// },
+
 const courses = [
   {
     courseName: "Course 1",

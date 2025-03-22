@@ -6,12 +6,11 @@ import FilterForm from "./forms/filter-form";
 import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [query, setQuery] = useState("");
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [selectedUni, setSelectedUni] = useState(null);
   const [selectedCampus, setSelectedCampus] = useState(null);
   const [selectedLevel, setSelectedLevel] = useState(null);
-
-  console.log(selectedCountry, selectedUni, selectedCampus, selectedLevel);
 
   const countries = [...new Set(courses.map((course) => course.country))];
   const universities = [];
@@ -19,6 +18,15 @@ export default function Home() {
   const levels = [];
 
   let searchedCourses = courses;
+
+  if (query.trim() !== "") {
+    const courses = searchedCourses.filter(
+      (course) => course.courseName.indexOf(query) !== -1
+    );
+
+    searchedCourses = courses;
+  }
+
   if (selectedCountry) {
     searchedCourses = courses.filter(
       (course) => course.country == selectedCountry
@@ -87,6 +95,8 @@ export default function Home() {
 
       {/* Form */}
       <FilterForm
+        query={query}
+        setQuery={setQuery}
         countries={countries}
         universities={universities}
         campuses={campuses}

@@ -1,6 +1,8 @@
 import React from "react";
 
 function FilterForm({
+  query,
+  setQuery,
   countries,
   universities,
   campuses,
@@ -16,6 +18,8 @@ function FilterForm({
         {/* Search Field - Full width on mobile, flex row on larger screens */}
         <div className="flex flex-col sm:flex-row gap-4">
           <input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
             type="text"
             placeholder="Search courses..."
             className="w-full p-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:border-[#fd9800] focus:text-[#fd9800] focus:outline-none"
