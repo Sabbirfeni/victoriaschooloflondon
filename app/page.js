@@ -4,6 +4,7 @@ import { courses } from "@/database";
 import Image from "next/image";
 import FilterForm from "./forms/filter-form";
 import { useEffect, useState } from "react";
+import Navbar from "./components/Navbar";
 
 export default function Home() {
   const [query, setQuery] = useState("");
@@ -87,6 +88,7 @@ export default function Home() {
 
   return (
     <>
+      <Navbar />
       <header className="relative h-[100px] sm:h-[150px] bg-cover bg-center bg-[#fd9800] flex items-center justify-center text-white">
         {/* Overlay for better text readability */}
         <h1 className="relative text-3xl sm:text-4xl font-bold text-center px-4">
