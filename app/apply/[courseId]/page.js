@@ -1,13 +1,78 @@
 "use client";
 
+import { useState } from "react";
+import { useParams } from "next/navigation";
 import countries from "@/all-countries";
 import { courses } from "@/database";
-import { useParams } from "next/navigation";
-import React from "react";
 
 function ApplyPage() {
   const { courseId } = useParams();
   const course = courses.find((course) => course.courseId == courseId);
+  const [formData, setFormData] = useState({
+    name: "",
+    nationality: "Bangladesh",
+    phone: "",
+    address: "",
+    email: "",
+    qualification: "",
+    message: "",
+    files: [],
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleFileChange = (e) => {
+    const files = e.target.files;
+    if (files) {
+      const fileArray = Array.from(files).map((file) => ({
+        filename: file.name,
+        content: file,
+      }));
+
+      // Append the new files to the existing ones in the formData
+      setFormData((prevData) => ({
+        ...prevData,
+        files: [...prevData.files, ...fileArray], // Add the new files to the current ones
+      }));
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const allData = new FormData();
+    allData.append("name", formData.name);
+    allData.append("nationality", formData.nationality);
+    allData.append("phone", formData.phone);
+    allData.append("address", formData.address);
+    allData.append("email", formData.email);
+    allData.append("qualification", formData.qualification);
+    allData.append("message", formData.message);
+
+    // Append the files to the FormData object
+    formData.files.forEach((file) => {
+      allData.append("files", file.content);
+    });
+
+    const response = await fetch("/api/send-email", {
+      method: "POST",
+      body: allData, // Send formData instead of JSON
+    });
+
+    const result = await response.json();
+    if (result.success) {
+      alert("Email sent successfully!");
+    } else {
+      alert(`Error: ${result.error}`);
+    }
+  };
+
   return (
     <>
       <header className="relative h-[100px] sm:h-[150px] bg-cover bg-center bg-[#fd9800] flex items-center justify-center text-black">
@@ -34,7 +99,7 @@ function ApplyPage() {
             </div>
             <div className="flex flex-col md:flex-row items-center gap-1 md:gap-3">
               <div className="bg-white p-4 w-full rounded-xl shadow-md flex-1">
-                Tution Fees: {course.tuitionFees}
+                Tuition Fees: {course.tuitionFees}
               </div>
               <div className="bg-white p-4 w-full rounded-xl shadow-md flex-1">
                 Scholarship: {course.scholarship}
@@ -47,7 +112,7 @@ function ApplyPage() {
             <h2 className="text-center font-semibold mb-4 text-2xl">
               Course Application
             </h2>
-            <form className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-gray-700">Course</label>
                 <input
@@ -80,15 +145,21 @@ function ApplyPage() {
                 <input
                   type="text"
                   placeholder="Your Name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   className="w-full p-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:border-[#fd9800] focus:text-[#fd9800] focus:outline-none"
                 />
               </div>
               <div>
                 <label className="block text-gray-700">Nationality*</label>
-                <select className="w-full p-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:border-[#fd9800] focus:text-[#fd9800] focus:outline-none bg-gray-100">
-                  <option key="bangladesh" value="Bangladesh">
-                    Bangladesh
-                  </option>
+                <select
+                  name="nationality"
+                  value={formData.nationality}
+                  onChange={handleChange}
+                  className="w-full p-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:border-[#fd9800] focus:text-[#fd9800] focus:outline-none bg-gray-100"
+                >
+                  <option value="Bangladesh">Bangladesh</option>
                   {countries.map((country, index) => (
                     <option key={index} value={country}>
                       {country}
@@ -101,6 +172,9 @@ function ApplyPage() {
                 <input
                   type="tel"
                   placeholder="Your Phone Number"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
                   className="w-full p-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:border-[#fd9800] focus:text-[#fd9800] focus:outline-none"
                 />
               </div>
@@ -109,6 +183,9 @@ function ApplyPage() {
                 <input
                   type="text"
                   placeholder="Your Address"
+                  name="address"
+                  value={formData.address}
+                  onChange={handleChange}
                   className="w-full p-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:border-[#fd9800] focus:text-[#fd9800] focus:outline-none"
                 />
               </div>
@@ -117,6 +194,9 @@ function ApplyPage() {
                 <input
                   type="email"
                   placeholder="Your Email Address"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   className="w-full p-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:border-[#fd9800] focus:text-[#fd9800] focus:outline-none"
                 />
               </div>
@@ -125,6 +205,9 @@ function ApplyPage() {
                 <input
                   type="text"
                   placeholder="Your Last Qualification"
+                  name="qualification"
+                  value={formData.qualification}
+                  onChange={handleChange}
                   className="w-full p-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:border-[#fd9800] focus:text-[#fd9800] focus:outline-none"
                 />
               </div>
@@ -145,6 +228,8 @@ function ApplyPage() {
                     </label>
                     <input
                       type="file"
+                      name="files"
+                      onChange={handleFileChange}
                       className="w-full p-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:border-[#fd9800] focus:text-[#fd9800] focus:outline-none"
                     />
                   </div>
@@ -154,7 +239,10 @@ function ApplyPage() {
               <div>
                 <label className="block text-gray-700">Message</label>
                 <textarea
+                  name="message"
                   placeholder="Your Message"
+                  value={formData.message}
+                  onChange={handleChange}
                   className="w-full p-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:border-[#fd9800] focus:text-[#fd9800] focus:outline-none h-24"
                 ></textarea>
               </div>
