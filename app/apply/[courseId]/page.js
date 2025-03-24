@@ -60,10 +60,13 @@ function ApplyPage() {
       allData.append("files", file.content);
     });
 
-    const response = await fetch("/api/send-email", {
-      method: "POST",
-      body: allData, // Send formData instead of JSON
-    });
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/send-email`,
+      {
+        method: "POST",
+        body: allData, // Send formData instead of JSON
+      }
+    );
 
     const result = await response.json();
     if (result.success) {

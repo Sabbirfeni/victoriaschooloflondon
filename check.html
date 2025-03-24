@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>University List</title>
+  <style>
+    /* (Your original CSS here - unchanged for brevity) */
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background-color: #f8f8f8;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      gap: 20px;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .navbar ul li a:hover {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    .container {
+      width: 96%;
+      
+      margin: 40px auto;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .filters {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color: #f1f5f9;
+      border-radius: 8px;
+    }
+
+    .filters select
+     {
+      padding: 10px;
+      
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .filters input {
+      padding: 10px;
+      width: 40%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .filters button {
+      padding: 10px 15px;
+      background-color: #3d3d3d9f;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: transparent;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+    }
+
+    thead tr {
+      background-color: transparent;
+      color: #333;
+      font-weight: bold;
+    }
+
+    tbody tr {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    tbody tr:hover {
+      background-color: #f1f5f9;
+    }
+
+    tbody tr td {
+      vertical-align: middle;
+      border-bottom: 1px solid #ddd;
+    }
+
+    tbody tr td img {
+      width: 150px;
+      max-height: 60px;
+      object-fit: contain;
+    }
+
+    .view-btn {
+      padding: 8px 15px;
+      color: #007bff;
+      border: 1px solid #007bff;
+      background-color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .view-btn:hover {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .pagination button {
+      padding: 8px 12px;
+      margin: 0 3px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .pagination button.active {
+      background-color: #007bff;
+      color: #fff;
+      border-color: #007bff;
+    }
+
+    .pagination button:disabled {
+      color: #ccc;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="logo">EduWorld</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Universities</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Apply Now</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  
+    <div class="container ">
+    <div class="filters">
+      <select id="countryFilter">
+        <option value="">Select Country</option>
+        <option value="Canada">Canada</option>
+        <option value="United Kingdom">United Kingdom</option>
+        <option value="Germany">Germany</option>
+        <option value="Malta">Malta</option>
+        <option value="Spain">Spain</option>
+        <option value="Cyprus">Cyprus</option>
+        <option value="Australia">Australia</option>
+      </select>
+      <input type="text" id="searchInput" placeholder="Search" />
+      <button id="searchBtn">🔍</button>
+    </div>
+
+    <!-- Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Country</th>
+          <th>University</th>
+          <th>Logo</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <!-- Table rows will be populated dynamically -->
+        <tbody id="tableBody">
+         
+       </tbody>
+      </tbody>
+    </table>
+
+    <!-- Pagination -->
+    <div class="pagination" id="pagination">
+      <!-- Pagination buttons will be populated dynamically -->
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+   // --- Data (You can move this to an external file or API) ---
+   const universities = [
+     { country: 'Canada', name: 'Algoma University', logo: 'https://logowik.com/content/uploads/images/amity-university9126.jpg' },
+     { country: 'United Kingdom', name: 'Coventry University', logo: 'https://tukuz.com/wp-content/uploads/2020/12/johns-hopkins-university-school-of-nursing-logo-vector.png' },
+     { country: 'United Kingdom', name: 'Cardiff Metropolitan University', logo: 'https://logos-world.net/wp-content/uploads/2023/02/Princeton-University-Logo.png' },
+     { country: 'Canada', name: 'Laurentian University', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwpL4Ua3k9hviC8BZP9uT63QE_NNVA5iD32A&s' },
+     { country: 'United Kingdom', name: 'Bangor University', logo: 'https://www.graduatesfirst.com/wp-content/uploads/2021/03/bangor_logo_c1_flush-800x228-1.png' },
+     { country: 'United Kingdom', name: 'Arden University', logo: 'https://www.arden.ac.uk/sites/default/files/styles/landing_page_banner/public/2020-06/arden-university.jpg' },
+     { country: 'Germany', name: 'Arden University Berlin', logo: 'https://www.arden.ac.uk/sites/default/files/2020-06/arden-university-berlin.jpg' },
+     { country: 'United Kingdom', name: 'Aston University', logo: 'https://www.aston.ac.uk/sites/default/files/2019-12/Aston%20University%20Logo.jpg' },
+     { country: 'Malta', name: 'Ascencia Malta', logo: 'https://www.ascencia-business-school.com/wp-content/uploads/2021/03/Ascencia-Logo.png' },
+     { country: 'Spain', name: 'Ascencia Valencia', logo: 'https://www.ascencia-business-school.com/wp-content/uploads/2021/03/Ascencia-Logo.png' },
+     { country: 'United Kingdom', name: 'University of Brighton', logo: 'https://www.brighton.ac.uk/images/logo-university-of-brighton.jpg' },
+     { country: 'United Kingdom', name: 'University of Bradford', logo: 'https://www.bradford.ac.uk/images/logos/uni-bradford-logo.png' },
+     { country: 'Canada', name: 'Kwantlen Polytechnic University', logo: 'https://upload.wikimedia.org/wikipedia/en/f/f7/Kwantlen_Polytechnic_University_Logo.png' },
+     { country: 'Cyprus', name: 'Cyprus West University', logo: 'https://www.cwu.edu.tr/wp-content/uploads/2019/07/cwu-logo.png' },
+     { country: 'Australia', name: 'Canterbury Institute of Management', logo: 'https://www.cim.edu.au/wp-content/uploads/2020/06/CIM-logo.jpg' },
+     { country: 'United Kingdom', name: 'University of Derby', logo: 'https://www.derby.ac.uk/media/derbyacuk/images/logos/uod-logo.jpg' },
+     { country: 'United Kingdom', name: 'University of Derby', logo: 'https://www.derby.ac.uk/media/derbyacuk/images/logos/uod-logo.jpg' },
+     { country: 'United Kingdom', name: 'University of Derby', logo: 'https://www.derby.ac.uk/media/derbyacuk/images/logos/uod-logo.jpg' },
+     { country: 'United Kingdom', name: 'University of Derby', logo: 'https://www.derby.ac.uk/media/derbyacuk/images/logos/uod-logo.jpg' },
+     
+     
+     { country: 'United Kingdom', name: 'University of Essex', logo: 'https://www.essex.ac.uk/-/media/images/logos/university-of-essex-logo.jpg' },
+     { country: 'Australia', name: 'University of Melbourne', logo: 'https://brand.unimelb.edu.au/__data/assets/image/0005/1926747/unimelb-logo.jpg' },
+     { country: 'Germany', name: 'Technical University of Munich', logo: 'https://upload.wikimedia.org/wikipedia/commons/1/1a/Logo_TUM.svg' },
+     { country: 'Canada', name: 'University of Toronto', logo: 'https://brand.utoronto.ca/wp-content/uploads/2017/01/University-of-Toronto-Master-Logo.png' },
+     { country: 'Spain', name: 'University of Barcelona', logo: 'https://upload.wikimedia.org/wikipedia/commons/5/54/University-of-Barcelona-logo.png' },
+     { country: 'Cyprus', name: 'University of Nicosia', logo: 'https://www.unic.ac.cy/wp-content/uploads/2018/03/UNIC-Logo-2017.png' },
+     { country: 'United Kingdom', name: 'University of Manchester', logo: 'https://upload.wikimedia.org/wikipedia/en/7/70/University_of_Manchester_logo.svg' },
+     { country: 'Australia', name: 'University of Sydney', logo: 'https://upload.wikimedia.org/wikipedia/en/5/56/University_of_Sydney_logo.svg' },
+     { country: 'Germany', name: 'Heidelberg University', logo: 'https://upload.wikimedia.org/wikipedia/commons/2/26/Universit%C3%A4t_Heidelberg_Logo.svg' },
+     { country: 'Malta', name: 'University of Malta', logo: 'https://www.um.edu.mt/library/oar/bitstream/123456789/22672/1/um_logo.png' },
+     { country: 'United Kingdom', name: 'University of Leeds', logo: 'https://upload.wikimedia.org/wikipedia/en/3/33/University_of_Leeds_logo.svg' },
+     { country: 'Canada', name: 'University of British Columbia', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/d/d8/UBC_logo.svg/1200px-UBC_logo.svg.png' },
+     { country: 'Spain', name: 'Complutense University of Madrid', logo: 'https://upload.wikimedia.org/wikipedia/en/e/e6/Logo_UCM.svg' },
+     { country: 'Australia', name: 'Monash University', logo: 'https://upload.wikimedia.org/wikipedia/en/f/f8/Monash_University_Logo.svg' }
+   ];
+ 
+   let currentPage = 1;
+   const rowsPerPage = 5;
+   let filteredUniversities = universities;
+ 
+   // --- Functions ---
+   function displayTable(universitiesArray, page) {
+     const tableBody = document.getElementById('tableBody');
+     tableBody.innerHTML = '';
+ 
+     page--;
+ 
+     const start = page * rowsPerPage;
+     const end = start + rowsPerPage;
+     const paginatedItems = universitiesArray.slice(start, end);
+ 
+     for (const uni of paginatedItems) {
+       const row = document.createElement('tr');
+ 
+       row.innerHTML = `
+         <td>${uni.country}</td>
+         <td>${uni.name}</td>
+         <td><img src="${uni.logo}" alt="${uni.name}"></td>
+         <td><button class="view-btn">View Profile</button></td>
+       `;
+ 
+       tableBody.appendChild(row);
+     }
+   }
+ 
+   function setupPagination(universitiesArray) {
+     const pagination = document.getElementById('pagination');
+     pagination.innerHTML = '';
+ 
+     const pageCount = Math.ceil(universitiesArray.length / rowsPerPage);
+ 
+     const prevButton = document.createElement('button');
+     prevButton.innerHTML = '«';
+     prevButton.disabled = currentPage === 1;
+     prevButton.addEventListener('click', () => {
+       if (currentPage > 1) {
+         currentPage--;
+         displayTable(universitiesArray, currentPage);
+         setupPagination(universitiesArray);
+       }
+     });
+     pagination.appendChild(prevButton);
+ 
+     for (let i = 1; i <= pageCount; i++) {
+       const btn = document.createElement('button');
+       btn.innerHTML = i;
+       btn.classList.toggle('active', currentPage === i);
+       btn.addEventListener('click', () => {
+         currentPage = i;
+         displayTable(universitiesArray, currentPage);
+         setupPagination(universitiesArray);
+       });
+       pagination.appendChild(btn);
+     }
+ 
+     const nextButton = document.createElement('button');
+     nextButton.innerHTML = '»';
+     nextButton.disabled = currentPage === pageCount;
+     nextButton.addEventListener('click', () => {
+       if (currentPage < pageCount) {
+         currentPage++;
+         displayTable(universitiesArray, currentPage);
+         setupPagination(universitiesArray);
+       }
+     });
+     pagination.appendChild(nextButton);
+   }
+ 
+   function filterUniversities() {
+     const searchInput = document.getElementById('searchInput').value.toLowerCase();
+     const countryFilter = document.getElementById('countryFilter').value;
+ 
+     filteredUniversities = universities.filter(uni => {
+       const matchesCountry = countryFilter === '' || uni.country === countryFilter;
+       const matchesSearch = uni.name.toLowerCase().includes(searchInput) || uni.country.toLowerCase().includes(searchInput);
+       return matchesCountry && matchesSearch;
+     });
+ 
+     currentPage = 1;
+     displayTable(filteredUniversities, currentPage);
+     setupPagination(filteredUniversities);
+   }
+ 
+   // --- Event Listeners ---
+   document.getElementById('searchBtn').addEventListener('click', filterUniversities);
+   document.getElementById('countryFilter').addEventListener('change', filterUniversities);
+   document.getElementById('searchInput').addEventListener('keyup', function(event) {
+     if (event.key === 'Enter') filterUniversities();
+   });
+ 
+   // --- Initialize ---
+   displayTable(filteredUniversities, currentPage);
+   setupPagination(filteredUniversities);
+ </script>
+</body>
+</html>
