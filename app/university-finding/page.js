@@ -205,7 +205,9 @@ const UniversitiesPage = () => {
       <div className="container relative">
         <div
           className={`filters w-full bg-white shadow-md z-50 transition-all duration-300 ease-in-out ${
-            isSticky ? "fixed top-24 left-0 shadow-lg w-full" : "relative"
+            isSticky
+              ? "fixed top-24 md:top-16 left-0 shadow-lg w-full"
+              : "relative"
           }`}
         >
           <select id="countryFilter" onChange={handleCountryChange}>
