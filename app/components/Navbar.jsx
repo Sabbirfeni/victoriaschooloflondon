@@ -32,10 +32,36 @@ export default function Navbar() {
   return (
     <nav
       className={`w-full bg-white shadow-md z-50 transition-all duration-300 ease-in-out ${
-        isSticky ? "fixed top-0 shadow-lg py-3" : "relative py-4"
+        isSticky ? "fixed top-0 shadow-lg" : "relative"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between px-4">
+      <div className="flex md:hidden justify-center space-x-4 py-1 text-black bg-[#fd9800]">
+        <a
+          href="https://www.facebook.com/victoriaschooloflondon"
+          className="hover:text-blue-500"
+        >
+          <FontAwesomeIcon icon={faFacebook} size="md" />
+        </a>
+        <a
+          href="https://www.instagram.com/victoria_school_of_london"
+          className="hover:text-pink-500"
+        >
+          <FontAwesomeIcon icon={faInstagram} size="md" />
+        </a>
+        <a
+          href="https://www.youtube.com/@Victoria-school-of-london"
+          className="hover:text-red-500"
+        >
+          <FontAwesomeIcon icon={faYoutube} size="md" />
+        </a>
+        <a
+          href="https://www.linkedin.com/company/victoria-school-of-london/"
+          className="hover:text-blue-700"
+        >
+          <FontAwesomeIcon icon={faLinkedin} size="md" />
+        </a>
+      </div>
+      <div className="container mx-auto flex items-center justify-between py-3 px-4">
         <Link href={`https://victoriaschooloflondon.co.uk/`}>
           <Image
             src="/images/logo.jpg"
@@ -109,7 +135,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu Button */}
-        <button className="md:hidden text-black" onClick={toggleMenu}>
+        <button className="md:hidden text-[#fd9800]" onClick={toggleMenu}>
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -144,37 +170,10 @@ export default function Navbar() {
               link: "https://victoriaschooloflondon.co.uk/contact/",
             },
           ].map((item) => (
-            <li key={item.title} className="hover:text-blue-500 cursor-pointer">
+            <li key={item.title} className="hover:[#fd9800] cursor-pointer">
               <Link href={item.link}> {item.title} </Link>
             </li>
           ))}
-
-          <div className="flex justify-center space-x-4 mt-4 text-black">
-            <a
-              href="https://www.facebook.com/victoriaschooloflondon"
-              className="hover:text-blue-500"
-            >
-              <FontAwesomeIcon icon={faFacebook} size="lg" />
-            </a>
-            <a
-              href="https://www.instagram.com/victoria_school_of_london"
-              className="hover:text-pink-500"
-            >
-              <FontAwesomeIcon icon={faInstagram} size="lg" />
-            </a>
-            <a
-              href="https://www.youtube.com/@Victoria-school-of-london"
-              className="hover:text-red-500"
-            >
-              <FontAwesomeIcon icon={faYoutube} size="lg" />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/victoria-school-of-london/"
-              className="hover:text-blue-700"
-            >
-              <FontAwesomeIcon icon={faLinkedin} size="lg" />
-            </a>
-          </div>
         </ul>
       )}
     </nav>
