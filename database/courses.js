@@ -380,7 +380,8 @@ const courses = [
 
   {
     courseId: 36,
-    courseName: "Honours Bachelor of Business Administration (Information Communication Technology)",
+    courseName:
+      "Honours Bachelor of Business Administration (Information Communication Technology)",
     country: "Canada",
     university: "St. Clair College",
     campus: "Chatham Campus",
@@ -391,7 +392,8 @@ const courses = [
 
   {
     courseId: 37,
-    courseName: "Honours Bachelor of Applied Arts in Social Justice & Legal Studies",
+    courseName:
+      "Honours Bachelor of Applied Arts in Social Justice & Legal Studies",
     country: "Canada",
     university: "St. Clair College",
     campus: "Chatham Campus",
@@ -542,8 +544,6 @@ const courses = [
     scholarship: "Not Available right now",
     tuitionFees: "€11000",
   },
-
-  
 ];
 
-export { courses };
+export default courses;

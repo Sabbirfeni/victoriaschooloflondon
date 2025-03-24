@@ -1,10 +1,10 @@
 "use client";
-import { courses } from "@/database";
 
 import Image from "next/image";
 import FilterForm from "./forms/filter-form";
 import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
+import courses from "@/database/courses";
 
 export default function Home() {
   const [query, setQuery] = useState("");
