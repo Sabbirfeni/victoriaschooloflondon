@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useParams } from "next/navigation";
 import countries from "@/all-countries";
-import { courses } from "@/database";
+import courses from "@/database/courses";
 
 function ApplyPage() {
   const { courseId } = useParams();
