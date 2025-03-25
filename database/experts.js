@@ -28,7 +28,7 @@ const experts = [
     name: "Linda Chen",
     country: "China",
     title: "Data Scientist",
-    image: "/amity-university9126.jpg",
+    image: "/",
     email: "contact.sabbirbhuiyan@gmail.com",
   },
 ];
