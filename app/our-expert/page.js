@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Image from "next/image";
+import Link from "next/link";
 import experts from "@/database/experts";
 
 export default function OurExpert() {
@@ -91,8 +92,9 @@ export default function OurExpert() {
             <h2 className="text-lg text-black font-semibold">{profile.name}</h2>
             <p className="text-md text-black font-semibold">{profile.title}</p>
             <p className="text-md text-black font-semibold">{profile.country}</p>
-            <button className="mt-2 w-full bg-[#fd9800] text-white py-2 rounded-lg ">
-              View Profile
+            <button className="mt-2 w-full bg-[#fd9800] text-white py-2 rounded-lg">
+                  <Link href={profile.profile ? profile.profile : '#'}>View Profile</Link>
+            
             </button>
             <button
               className="mt-2 w-full border text-black border-gray-300 py-2 rounded-lg hover:bg-gray-100"
