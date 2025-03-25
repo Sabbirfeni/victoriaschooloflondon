@@ -6,6 +6,7 @@ const experts = [
     title: "International Admission Officer",
     image: "/Sahed Iqbal.png",
     email: "sahed@victoriaschooloflondon.co.uk",
+    profile: ""
   },
   {
     id: 2,
@@ -13,7 +14,8 @@ const experts = [
     country: "United Kingdom",
     title: "Co-Founder",
     image: "/Polash.png",
-    email: "info.victoriaschooloflondon@gmail.com"
+    email: "info.victoriaschooloflondon@gmail.com",
+    profile: ""
   },
   {
     id: 3,
@@ -21,7 +23,8 @@ const experts = [
     country: "United Kingdom",
     title: "International Admission Officer",
     image: "/Adriana Bemba.png",
-    email: "info.victoriaschooloflondon@gmail.com"
+    email: "info.victoriaschooloflondon@gmail.com",
+    profile: ""
   },
   {
     id: 4,
@@ -30,6 +33,7 @@ const experts = [
     title: "Data Scientist",
     image: "/",
     email: "contact.sabbirbhuiyan@gmail.com",
+    profile: ""
   },
 ];
 
