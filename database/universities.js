@@ -1,24 +1,31 @@
 const universities = [
   {
-    country: "Canada",
-    name: "Algoma University",
-    logo: "/amity-university9126.jpg",
-    profile: "#",
+    country: "United Kingdom",
+    name: "Birmingham City University",
+    logo: "/Birmingham_City_University_Logo.png",
+    profile:
+      "https://victoriaschooloflondon.co.uk/university-finding-2/birmingham-city-university/",
   },
   {
     country: "United Kingdom",
     name: "Coventry University",
-    // logo: "https://tukuz.com/wp-content/uploads/2020/12/johns-hopkins-university-school-of-nursing-logo-vector.png",
+    logo: "/images.png",
+    profile:
+      "https://victoriaschooloflondon.co.uk/university-finding-2/coventry-university/",
   },
   {
     country: "United Kingdom",
-    name: "Cardiff Metropolitan University",
-    // logo: "https://logos-world.net/wp-content/uploads/2023/02/Princeton-University-Logo.png",
+    name: "De Montfort University",
+    logo: "/de-montfort-university-logo-vector.png",
+    profile:
+      "https://victoriaschooloflondon.co.uk/university-finding-2/de-montfort-university/",
   },
   {
-    country: "Canada",
-    name: "Laurentian University",
-    // logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwpL4Ua3k9hviC8BZP9uT63QE_NNVA5iD32A&s",
+    country: "United Kingdom",
+    name: "Northumbria University London",
+    logo: "/Northumbria_University_Logo.png",
+    profile:
+      "https://victoriaschooloflondon.co.uk/university-finding-2/northumbria-university-london/",
   },
   {
     country: "United Kingdom",
