@@ -17,10 +17,10 @@ const experts = [
   },
   {
     id: 3,
-    name: "Carlos Rivera",
-    country: "Spain",
-    title: "UX Designer",
-    image: "/amity-university9126.jpg",
+    name: "Adriana Vemba",
+    country: "United Kingdom",
+    title: "International Admission Officer",
+    image: "/Adriana Bemba.png",
     email: "contact.sabbirbhuiyan@gmail.com",
   },
   {
