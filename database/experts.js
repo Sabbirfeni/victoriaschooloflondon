@@ -13,8 +13,7 @@ const experts = [
     country: "United Kingdom",
     title: "Co-Founder",
     image: "/Polash.png",
-    email: "info.victoriaschooloflondon@gmail.com
-",
+    email: "info.victoriaschooloflondon@gmail.com"
   },
   {
     id: 3,
@@ -22,8 +21,7 @@ const experts = [
     country: "United Kingdom",
     title: "International Admission Officer",
     image: "/Adriana Bemba.png",
-    email: "info.victoriaschooloflondon@gmail.com
-",
+    email: "info.victoriaschooloflondon@gmail.com"
   },
   {
     id: 4,
