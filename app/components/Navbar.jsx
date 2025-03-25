@@ -84,7 +84,7 @@ export default function Navbar() {
             },
             {
               title: "Our Experts",
-              link: "#",
+              link: "/our-expert",
             },
             {
               title: "Services",
@@ -154,7 +154,7 @@ export default function Navbar() {
             },
             {
               title: "Our Experts",
-              link: "#",
+              link: "/our-expert",
             },
             {
               title: "Services",
