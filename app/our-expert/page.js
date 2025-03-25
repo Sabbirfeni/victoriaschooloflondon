@@ -89,8 +89,8 @@ export default function OurExpert() {
             </div>
 
             <h2 className="text-lg text-black font-semibold">{profile.name}</h2>
-            <p className="text-sm text-gray-500">{profile.title}</p>
-            <p className="text-sm text-gray-400">{profile.country}</p>
+            <p className="text-md text-black font-semibold">{profile.title}</p>
+            <p className="text-md text-black font-semibold">{profile.country}</p>
             <button className="mt-2 w-full bg-[#fd9800] text-white py-2 rounded-lg ">
               View Profile
             </button>
