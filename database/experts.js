@@ -28,9 +28,9 @@ const experts = [
   },
   {
     id: 4,
-    name: "Linda Chen",
-    country: "China",
-    title: "Data Scientist",
+    name: "Tanbirul Islam",
+    country: "United Kingdom",
+    title: "Chief Operations officer",
     image: "/",
     email: "contact.sabbirbhuiyan@gmail.com",
     profile: ""
