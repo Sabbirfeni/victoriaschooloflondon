@@ -49,7 +49,7 @@ const experts = [
     name: "Tanbirul Islam",
     country: "United Kingdom",
     title: "Chief Operations officer",
-    image: "/blank image.png",
+    image: "/",
     email: "info.victoriaschooloflondon@gmail.com",
     profile: ""
   },
@@ -58,7 +58,7 @@ const experts = [
     name: "Tanbirul Islam",
     country: "United Kingdom",
     title: "Chief Operations officer",
-    image: "/blank image.png",
+    image: "/",
     email: "info.victoriaschooloflondon@gmail.com",
     profile: ""
   },
@@ -67,7 +67,7 @@ const experts = [
     name: "Tanbirul Islam",
     country: "United Kingdom",
     title: "Chief Operations officer",
-    image: "/blank image.png",
+    image: "/",
     email: "info.victoriaschooloflondon@gmail.com",
     profile: ""
   },
@@ -76,7 +76,7 @@ const experts = [
     name: "Tanbirul Islam",
     country: "United Kingdom",
     title: "Chief Operations officer",
-    image: "/blank image.png",
+    image: "/",
     email: "info.victoriaschooloflondon@gmail.com",
     profile: ""
   },
@@ -85,7 +85,7 @@ const experts = [
     name: "Tanbirul Islam",
     country: "United Kingdom",
     title: "Chief Operations officer",
-    image: "/blank image.png",
+    image: "/",
     email: "info.victoriaschooloflondon@gmail.com",
     profile: ""
   },
@@ -94,7 +94,7 @@ const experts = [
     name: "Tanbirul Islam",
     country: "United Kingdom",
     title: "Chief Operations officer",
-    image: "/blank image.png",
+    image: "/",
     email: "info.victoriaschooloflondon@gmail.com",
     profile: ""
   },
@@ -103,7 +103,7 @@ const experts = [
     name: "Tanbirul Islam",
     country: "United Kingdom",
     title: "Chief Operations officer",
-    image: "/blank image.png",
+    image: "/",
     email: "info.victoriaschooloflondon@gmail.com",
     profile: ""
   },
@@ -112,7 +112,7 @@ const experts = [
     name: "Tanbirul Islam",
     country: "United Kingdom",
     title: "Chief Operations officer",
-    image: "/blank image.png",
+    image: "/",
     email: "info.victoriaschooloflondon@gmail.com",
     profile: ""
   },
