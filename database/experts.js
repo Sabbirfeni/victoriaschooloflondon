@@ -73,49 +73,231 @@ const experts = [
   },
     {
     id: 9,
-    name: "Tanbirul Islam",
+    name: "Mehedi hassan",
     country: "United Kingdom",
-    title: "Chief Operations officer",
+    title: "Advisor",
     image: "/",
     email: "info.victoriaschooloflondon@gmail.com",
     profile: ""
   },
     {
     id: 10,
-    name: "Tanbirul Islam",
-    country: "United Kingdom",
-    title: "Chief Operations officer",
+    name: "Abdullah al Mamun",
+    country: "Noakhali, Bangladesh",
+    title: "International Admission Officer",
     image: "/",
     email: "info.victoriaschooloflondon@gmail.com",
     profile: ""
   },
     {
     id: 11,
-    name: "Tanbirul Islam",
-    country: "United Kingdom",
-    title: "Chief Operations officer",
+    name: "Azizul Hakim",
+    country: "Dhaka, Bangladesh",
+    title: "International Admission Officer",
     image: "/",
     email: "info.victoriaschooloflondon@gmail.com",
     profile: ""
   },
     {
     id: 12,
-    name: "Tanbirul Islam",
-    country: "United Kingdom",
-    title: "Chief Operations officer",
+    name: "Nurul Abser Sourav",
+    country: "London, UK",
+    title: "International Admission Officer",
     image: "/",
     email: "info.victoriaschooloflondon@gmail.com",
     profile: ""
   },
     {
     id: 13,
-    name: "Tanbirul Islam",
-    country: "United Kingdom",
-    title: "Chief Operations officer",
+    name: "Abdullah al Mahmud",
+    country: "Tasmania, Australia",
+    title: "International Admission Officer",
     image: "/",
     email: "info.victoriaschooloflondon@gmail.com",
     profile: ""
   },
+    {
+    id: 14,
+    name: "Mozibur Rahman",
+    country: "London, UK",
+    title: "International Admission Officer",
+    image: "/",
+    email: "info.victoriaschooloflondon@gmail.com",
+    profile: ""
+  },
+    {
+    id: 15,
+    name: "Abdullah al Mahmud",
+    country: "Tasmania, Australia",
+    title: "International Admission Officer",
+    image: "/",
+    email: "info.victoriaschooloflondon@gmail.com",
+    profile: ""
+  },
+   {
+    id: 16,
+    name: "Mithu Pathwary ",
+    country: "London, UK",
+    title: "International Admission Officer",
+    image: "/",
+    email: "info.victoriaschooloflondon@gmail.com",
+    profile: ""
+  },
+     {
+    id: 17,
+    name: "Md Shoriful Hoque",
+    country: "London, UK",
+    title: "International Admission Officer",
+    image: "/",
+    email: "info.victoriaschooloflondon@gmail.com",
+    profile: ""
+  },
+     {
+    id: 18,
+    name: "Sumon Sinha",
+    country: "London, UK",
+    title: "International Admission Officer",
+    image: "/",
+    email: "info.victoriaschooloflondon@gmail.com",
+    profile: ""
+  },
+     {
+    id: 19,
+    name: "Manshi Sinha",
+    country: "London, UK",
+    title: "International Admission Officer",
+    image: "/",
+    email: "info.victoriaschooloflondon@gmail.com",
+    profile: ""
+  },
+     {
+    id: 15,
+    name: "Shorna Akter",
+    country: "London, UK",
+    title: "International Admission Officer",
+    image: "/",
+    email: "info.victoriaschooloflondon@gmail.com",
+    profile: ""
+  },
+     {
+    id: 15,
+    name: "Riyad",
+    country: "London, UK",
+    title: "International Admission Officer",
+    image: "/",
+    email: "info.victoriaschooloflondon@gmail.com",
+    profile: ""
+  },
+     {
+    id: 15,
+    name: "Foysal",
+    country: "London, UK",
+    title: "International Admission Officer",
+    image: "/",
+    email: "info.victoriaschooloflondon@gmail.com",
+    profile: ""
+  },
+    {
+    id: 15,
+    name: "John Rana",
+    country: "London, UK",
+    title: "International Admission Officer",
+    image: "/",
+    email: "info.victoriaschooloflondon@gmail.com",
+    profile: ""
+  },
+    {
+    id: 15,
+    name: "Jakia Akter",
+    country: "London, UK",
+    title: "International Admission Officer",
+    image: "/",
+    email: "info.victoriaschooloflondon@gmail.com",
+    profile: ""
+  },
+    {
+    id: 15,
+    name: "Gabriella Macedo",
+    country: "London, UK + Brazil",
+    title: "International Admission Officer",
+    image: "/",
+    email: "info.victoriaschooloflondon@gmail.com",
+    profile: ""
+  },
+    {
+    id: 15,
+    name: "Sakib Rahman",
+    country: "London, UK",
+    title: "International Admission Officer",
+    image: "/",
+    email: "info.victoriaschooloflondon@gmail.com",
+    profile: ""
+  },
+    {
+    id: 15,
+    name: "Afzal Hossain",
+    country: "London, UK + Ireland",
+    title: "International Admission Officer",
+    image: "/",
+    email: "info.victoriaschooloflondon@gmail.com",
+    profile: ""
+  },
+    {
+    id: 15,
+    name: "Tanzil Islam",
+    country: "London, UK",
+    title: "International Admission Officer",
+    image: "/",
+    email: "info.victoriaschooloflondon@gmail.com",
+    profile: ""
+  },
+    {
+    id: 15,
+    name: "Siful Islam jewel",
+    country: "Nowakhali, Bangladesh ",
+    title: "Admission Officer",
+    image: "/",
+    email: "info.victoriaschooloflondon@gmail.com",
+    profile: ""
+  },
+    {
+    id: 15,
+    name: "Nazmul Hoque",
+    country: "Dhaka, Bangladesh",
+    title: "International Admission Officer",
+    image: "/",
+    email: "info.victoriaschooloflondon@gmail.com",
+    profile: ""
+  },
+    {
+    id: 15,
+    name: "Ashifur Rahman ",
+    country: "London, UK",
+    title: "International Admission Officer",
+    image: "/",
+    email: "info.victoriaschooloflondon@gmail.com",
+    profile: ""
+  },
+    {
+    id: 15,
+    name: "Tusher Ahmed",
+    country: "Canada",
+    title: "International Admission Officer",
+    image: "/",
+    email: "info.victoriaschooloflondon@gmail.com",
+    profile: ""
+  },
+
+     {
+    id: 15,
+    name: "Hafiz Al Shahariar",
+    country: "Newcastle, UK",
+    title: "International Admission Officer",
+    image: "/",
+    email: "info.victoriaschooloflondon@gmail.com",
+    profile: ""
+  },
+  
   
 ];
 
