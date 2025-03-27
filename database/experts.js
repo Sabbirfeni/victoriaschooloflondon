@@ -85,7 +85,7 @@ const experts = [
     name: "Abdullah al Mamun",
     country: "Noakhali, Bangladesh",
     title: "International Admission Officer",
-    image: "/",
+    image: "/Abdullah al Mamun.png",
     email: "info.victoriaschooloflondon@gmail.com",
     profile: ""
   },
@@ -112,7 +112,7 @@ const experts = [
     name: "Abdullah al Mahmud",
     country: "Tasmania, Australia",
     title: "International Admission Officer",
-    image: "/",
+    image: "/Abdullah al Mahmud.png",
     email: "info.victoriaschooloflondon@gmail.com",
     profile: ""
   },
