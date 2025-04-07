@@ -876,7 +876,38 @@ Business",
     scholarship: "TBA",
     tuitionFees: "EUR 10,000 Yearly ",
   },
-  
+
+    {
+    courseId: 81,
+    courseName: "BA (Hons) International Business",
+    country: "United Kingdom",
+    university: "Wrexham Glyndwr University",
+    campus: "Wrexham",
+    level: "Undergraduate",
+    scholarship: "",
+    tuitionFees: "GBP 11500.00 ",
+  },
+    {
+    courseId: 82,
+    courseName: "Business Management - BA (Hons)",
+    country: "United Kingdom",
+    university: "London Metropolitan University",
+    campus: "London",
+    level: "Undergraduate",
+    scholarship: "",
+    tuitionFees: "GBP 17600.00 ",
+  },
+    {
+    courseId: 83,
+    courseName: "BA (Hons) Rural Business Management",
+    country: "United Kingdom",
+    university: "Scotland Rural College",
+    campus: "Barony",
+    level: "Undergraduate",
+    scholarship: "",
+    tuitionFees: "GBP 16000.00 ",
+  }
+    
 ];
 
 export default courses;
