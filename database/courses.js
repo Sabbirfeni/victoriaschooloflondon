@@ -844,6 +844,38 @@ const courses = [
     scholarship: "€1000",
     tuitionFees: "€19020",
   },
+
+  {
+    courseId: 78,
+    courseName: "BA in Business ",
+    country: "Ireland",
+    university: "Griffith College ",
+    campus: "Dublin",
+    level: "Undergraduate",
+    scholarship: "TBA",
+    tuitionFees: "€13,500 Yearly  ",
+  },
+  {
+    courseId: 79,
+    courseName: "Bachelor of Business",
+    country: "Ireland",
+    university: "Dublin Business School",
+    campus: "Dublin",
+    level: "Undergraduate",
+    scholarship: "TBA",
+    tuitionFees: "EUR 10050 Yearly ",
+  },
+  {
+    courseId: 80,
+    courseName: "Bachelor of Arts (Honours) in 
+Business",
+    country: "Ireland",
+    university: "Holmes Institute Dublin",
+    campus: "Hungary",
+    level: "Undergraduate",
+    scholarship: "TBA",
+    tuitionFees: "EUR 10,000 Yearly ",
+  },
   
 ];
 
