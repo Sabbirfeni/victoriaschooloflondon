@@ -28,9 +28,11 @@ const universities = [
       "https://victoriaschooloflondon.co.uk/university-finding-2/northumbria-university-london/",
   },
   {
-    country: "United Kingdom",
-    name: "Bangor University",
-    // logo: "https://www.graduatesfirst.com/wp-content/uploads/2021/03/bangor_logo_c1_flush-800x228-1.png",
+    country: "Polnad",
+    name: "Vistula University",
+    logo: "/vistula-poland.jpg",
+     profile:
+      "https://vistula.edu.pl/en",
   },
   {
     country: "United Kingdom",
