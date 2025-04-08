@@ -901,8 +901,7 @@ const courses = [
       
   {
     courseId: 86,
-    courseName: "Bachelor of Arts (Honours) in 
-Business",
+    courseName: "Bachelor of Arts (Honours) in Business",
     country: "Ireland",
     university: "Holmes Institute Dublin",
     campus: "Hungary",
