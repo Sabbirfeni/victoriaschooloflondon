@@ -835,7 +835,7 @@ const courses = [
     tuitionFees: "€17710",
   },
         {
-    courseId: 77,
+    courseId: 80,
     courseName: "MA Acting",
     country: "United Kingdom",
     university: "Birmingham City University",
@@ -846,38 +846,6 @@ const courses = [
   },
 
   {
-    courseId: 78,
-    courseName: "BA in Business ",
-    country: "Ireland",
-    university: "Griffith College ",
-    campus: "Dublin",
-    level: "Undergraduate",
-    scholarship: "TBA",
-    tuitionFees: "€13,500 Yearly  ",
-  },
-  {
-    courseId: 79,
-    courseName: "Bachelor of Business",
-    country: "Ireland",
-    university: "Dublin Business School",
-    campus: "Dublin",
-    level: "Undergraduate",
-    scholarship: "TBA",
-    tuitionFees: "EUR 10050 Yearly ",
-  },
-  {
-    courseId: 80,
-    courseName: "Bachelor of Arts (Honours) in 
-Business",
-    country: "Ireland",
-    university: "Holmes Institute Dublin",
-    campus: "Hungary",
-    level: "Undergraduate",
-    scholarship: "TBA",
-    tuitionFees: "EUR 10,000 Yearly ",
-  },
-
-    {
     courseId: 81,
     courseName: "BA (Hons) International Business",
     country: "United Kingdom",
@@ -897,6 +865,7 @@ Business",
     scholarship: "",
     tuitionFees: "GBP 17600.00 ",
   },
+  
     {
     courseId: 83,
     courseName: "BA (Hons) Rural Business Management",
@@ -906,7 +875,42 @@ Business",
     level: "Undergraduate",
     scholarship: "",
     tuitionFees: "GBP 16000.00 ",
+  },
+
+  {
+    courseId: 84,
+    courseName: "BA in Business ",
+    country: "Ireland",
+    university: "Griffith College ",
+    campus: "Dublin",
+    level: "Undergraduate",
+    scholarship: "TBA",
+    tuitionFees: "€13,500 Yearly  ",
+  },
+  
+  {
+    courseId: 85,
+    courseName: "Bachelor of Business",
+    country: "Ireland",
+    university: "Dublin Business School",
+    campus: "Dublin",
+    level: "Undergraduate",
+    scholarship: "TBA",
+    tuitionFees: "EUR 10050 Yearly ",
+  },
+      
+  {
+    courseId: 86,
+    courseName: "Bachelor of Arts (Honours) in 
+Business",
+    country: "Ireland",
+    university: "Holmes Institute Dublin",
+    campus: "Hungary",
+    level: "Undergraduate",
+    scholarship: "TBA",
+    tuitionFees: "EUR 10,000 Yearly ",
   }
+
     
 ];
 
