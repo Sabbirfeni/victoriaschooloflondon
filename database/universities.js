@@ -31,8 +31,7 @@ const universities = [
     country: "Polnad",
     name: "Vistula University",
     logo: "/vistula-poland.jpg",
-     profile:
-      "https://vistula.edu.pl/en",
+     profile:"https://vistula.edu.pl/en",
   },
   {
     country: "United Kingdom",
