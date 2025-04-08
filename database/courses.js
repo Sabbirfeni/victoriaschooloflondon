@@ -904,11 +904,55 @@ const courses = [
     courseName: "Bachelor of Arts (Honours) in Business",
     country: "Ireland",
     university: "Holmes Institute Dublin",
-    campus: "Hungary",
+    campus: "Dublin",
     level: "Undergraduate",
     scholarship: "TBA",
     tuitionFees: "EUR 10,000 Yearly ",
-  }
+  },
+
+  {
+    courseId: 87,
+    courseName: "Business Management with Business Analytics BSc (Hons)",
+    country: "United Kingdom",
+    university: "University of Bedfordshire",
+    campus: "Luton",
+    level: "Undergraduate",
+    scholarship: "",
+    tuitionFees: "GBP 15500 Yearly",
+  },
+
+    {
+    courseId: 88,
+    courseName: "BSc (Hons) Business Management",
+    country: "United Kingdom",
+    university: "University of East London",
+    campus: "Stratford",
+    level: "Undergraduate",
+    scholarship: "",
+    tuitionFees: "GBP 15560.00",
+  },
+
+   {
+    courseId: 89,
+    courseName: "Business Management BA (Hons)",
+    country: "United Kingdom",
+    university: "Coventry University",
+    campus: "Coventry",
+    level: "Undergraduate",
+    scholarship: "",
+    tuitionFees: "GBP 16800 Yearly",
+  },
+
+  {
+    courseId: 90,
+    courseName: "Business Management - BA (Hons)",
+    country: "United Kingdom",
+    university: "London Metropolitan University",
+    campus: "London",
+    level: "Undergraduate",
+    scholarship: "",
+    tuitionFees: "GGBP 17600 Yearly",
+  },
 
     
 ];
