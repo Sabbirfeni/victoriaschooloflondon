@@ -36,31 +36,31 @@ const universities = [
   {
     country: "France",
     name: "Schiller International University",
-    logo: "schiller-usa.png",
+    logo: "/schiller-usa.png",
     profile:"https://www.schiller.edu/campuses/paris/",
   },
   {
     country: "France",
     name: "École de Management Appliqué",
-    logo: "france-university.png",
+    logo: "/france-university.png",
     profile:"https://ema.education/en/",
   },
   {
     country: "Malta",
     name: "GBS Malta",
-    logo: "malta-univesity.jpg",
+    logo: "/malta-univesity.jpg",
     profile:"https://gbs.edu.mt/",
   },
   {
     country: "Malta",
     name: "University of Malta",
-    logo: "malta-univesity-3.jpg",
+    logo: "/malta-univesity-3.jpg",
     profile:"https://www.um.edu.mt/",
   },
   {
     country: "Malta",
     name: "Ascencia Business School Malta",
-    logo: "malta-univesity-2.jpg",
+    logo: "/malta-univesity-2.jpg",
     profile:"https://www.ascencia-business-school.mt/",
   },
   {
