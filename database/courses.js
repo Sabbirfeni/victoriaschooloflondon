@@ -994,6 +994,68 @@ const courses = [
     tuitionFees: "$24034",
   },
 
+   {
+    courseId: 95,
+    courseName: "BA (Hons) Business and Management",
+    country: "Malta",
+    university: "GBS Malta",
+    campus: "Malta",
+    level: "Undergraduate",
+    scholarship: "Not Available right now",
+    tuitionFees: "€6000",
+  },
+   {
+    courseId: 96,
+    courseName: "Master in Business Administration Online",
+    country: "Malta",
+    university: "GBS Malta",
+    campus: "Malta",
+    level: "Postgraduate",
+    scholarship: "Upto 30%",
+    tuitionFees: "€10000",
+  },
+   {
+    courseId: 97,
+    courseName: "Award in Information Technology and Study Skills",
+    country: "Malta",
+    university: "GBS Malta",
+    campus: "Malta",
+    level: "Postgraduate",
+    scholarship: "Not Available right now",
+    tuitionFees: "€5000",
+  },
+   {
+    courseId: 98,
+    courseName: "Award in Business, Management and Study Skills",
+    country: "Malta",
+    university: "GBS Malta",
+    campus: "Malta",
+    level: "Postgraduate",
+    scholarship: "Not Available right now",
+    tuitionFees: "€5000",
+  },
+   {
+    courseId: 99,
+    courseName: "MA Business and Management",
+    country: "Malta",
+    university: "GBS Malta",
+    campus: "Malta",
+    level: "Postgraduate",
+    scholarship: "Not Available right now",
+    tuitionFees: "€7000",
+  },
+   {
+    courseId: 100,
+    courseName: "MA Marketing and Brand Management",
+    country: "Malta",
+    university: "GBS Malta",
+    campus: "Malta",
+    level: "Postgraduate",
+    scholarship: "upto 30%",
+    tuitionFees: "€7000",
+  },
+  
+
   
     
 ];
