@@ -953,7 +953,46 @@ const courses = [
     scholarship: "",
     tuitionFees: "GGBP 17600 Yearly",
   },
-
+   {
+    courseId: 91,
+    courseName: "Master of Computer Science",
+    country: "CANADA",
+    university: "Algoma University",
+    campus: "Brampton",
+    level: "Postgraduate",
+    scholarship: "Upto 10000 CAD",
+    tuitionFees: "$24532",
+  },
+   {
+    courseId: 92,
+    courseName: "Master's of Science in Biology",
+    country: "CANADA",
+    university: "Algoma University",
+    campus: "Sault Ste. Marie",
+    level: "Postgraduate",
+    scholarship: "Upto 10000 CAD",
+    tuitionFees: "$24532",
+  },
+   {
+    courseId: 93,
+    courseName: "Master of Computer Science",
+    country: "CANADA",
+    university: "Algoma University",
+    campus: "Sault Ste. Marie",
+    level: "Postgraduate",
+    scholarship: "Upto 10000 CAD",
+    tuitionFees: " $24532",
+  },
+   {
+    courseId: 94,
+    courseName: "MSc Biology",
+    country: "CANADA",
+    university: "Algoma University",
+    campus: "Sault Ste. Marie",
+    level: "Postgraduate",
+    scholarship: "Upto 10000 CAD",
+    tuitionFees: "$24034",
+  },
     
 ];
 
