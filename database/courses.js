@@ -382,7 +382,7 @@ const courses = [
     courseId: 36,
     courseName:
       "Honours Bachelor of Business Administration (Information Communication Technology)",
-    country: "Canada",
+    country: "CANADA",
     university: "St. Clair College",
     campus: "Chatham Campus",
     level: "Undergraduate",
@@ -394,7 +394,7 @@ const courses = [
     courseId: 37,
     courseName:
       "Honours Bachelor of Applied Arts in Social Justice & Legal Studies",
-    country: "Canada",
+    country: "CANADA",
     university: "St. Clair College",
     campus: "Chatham Campus",
     level: "Undergraduate",
@@ -405,7 +405,7 @@ const courses = [
   {
     courseId: 38,
     courseName: "Master of Computer Science",
-    country: "Canada",
+    country: "CANADA",
     university: "Algoma University",
     campus: "Brampton",
     level: "Postgraduate",
@@ -993,6 +993,8 @@ const courses = [
     scholarship: "Upto 10000 CAD",
     tuitionFees: "$24034",
   },
+
+  
     
 ];
 
