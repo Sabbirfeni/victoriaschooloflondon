@@ -14,7 +14,7 @@ const experts = [
     country: "United Kingdom",
     title: "Co-Founder",
     image: "/Polash.png",
-    email: "info.victoriaschooloflondon@gmail.com",
+    email: "jahir1ahammed@gmail.com",
     profile: ""
   },
   {
