@@ -33,19 +33,12 @@ function ApplyPage() {
   };
 
   const handleFileChange = (e) => {
-    const files = e.target.files;
-    if (files) {
-      const fileArray = Array.from(files).map((file) => ({
-        filename: file.name,
-        content: file,
-      }));
+    const files = Array.from(e.target.files); // actual File objects
 
-      // Append the new files to the existing ones in the formData
-      setFormData((prevData) => ({
-        ...prevData,
-        files: [...prevData.files, ...fileArray], // Add the new files to the current ones
-      }));
-    }
+    setFormData((prevData) => ({
+      ...prevData,
+      files: [...prevData.files, ...files], // Append to existing files
+    }));
   };
 
   const handleSubmit = async (e) => {
@@ -63,41 +56,44 @@ function ApplyPage() {
     allData.append("qualification", formData.qualification);
     allData.append("message", formData.message);
 
-    // Course data
+    // Append course data
     allData.append("courseName", course.courseName);
     allData.append("university", course.university);
     allData.append("campus", course.campus);
     allData.append("tuitionFees", course.tuitionFees);
     allData.append("scholarship", course.scholarship);
 
+    // ✅ Append all files using the same field name ("file")
+    formData.files.forEach((file) => {
+      allData.append("file", file); // important: use "file" as field name
+    });
+
+    // The endpoint should match your API file name
+
     try {
-      // Append the files to the FormData object
-      formData.files.forEach((file) => {
-        allData.append("files", file.content);
-      });
-
-      const response = await fetch(`/api/send-email`, {
+      const response = await fetch("/api/send-email", {
         method: "POST",
-        body: allData, // Send formData instead of JSON
+        body: allData,
+        // Don't set Content-Type header - browser will set it with boundary
       });
-
       const result = await response.json();
       if (result.success) {
         setSuccessMessage("Your request has been sent successfully!");
-        setFormData({
-          name: "",
-          nationality: "Bangladesh",
-          phone: "",
-          address: "",
-          email: "",
-          qualification: "",
-          message: "",
-          files: [],
-        });
+        // setFormData({
+        //   name: "",
+        //   nationality: "Bangladesh",
+        //   phone: "",
+        //   address: "",
+        //   email: "",
+        //   qualification: "",
+        //   message: "",
+        //   files: [],
+        // });
       } else {
         setErrorMessage(result.error);
       }
-    } catch {
+    } catch (error) {
+      console.log(error.message);
       setErrorMessage("Failed to send the request");
     } finally {
       setLoading(false);
@@ -287,6 +283,7 @@ function ApplyPage() {
               )}
               {errorMessage && <p className="text-red-500">{errorMessage}</p>}
               <button
+                disabled={loading}
                 type="submit"
                 className="w-full bg-[#fd9800] text-white p-3 rounded-lg hover:bg-[#fd8b00] cursor-pointer"
               >
