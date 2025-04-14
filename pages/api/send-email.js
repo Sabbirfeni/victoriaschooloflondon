@@ -17,31 +17,15 @@ export const config = {
 };
 
 export default async function handler(req, res) {
-  // Handle OPTIONS (preflight) requests
-  if (req.method === "OPTIONS") {
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-    return res.status(200).end();
-  }
-
   if (req.method !== "POST") {
-    res.setHeader("Allow", ["POST"]);
-    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
+    return res.status(405).json({ error: "Method Not Allowed" });
   }
-
-  // const form = formidable({
-  //   multiples: true,
-  //   keepExtensions: true,
-  //   uploadDir: UPLOAD_DIR,
-  //   maxFileSize: 20 * 1024 * 1024, // 20MB limit
-  // });
 
   const form = formidable({
     multiples: true,
-    // Don't write to filesystem in serverless environment
-    fileWriteStreamHandler: () => null,
-    maxFileSize: 20 * 1024 * 1024,
+    keepExtensions: true,
+    uploadDir: UPLOAD_DIR,
+    maxFileSize: 20 * 1024 * 1024, // 20MB limit
   });
 
   try {
@@ -66,27 +50,27 @@ export default async function handler(req, res) {
       const uploadedFiles = Array.isArray(files.file)
         ? files.file
         : [files.file];
+      console.log(`Processing ${uploadedFiles.length} file(s)`);
 
       for (const file of uploadedFiles) {
         try {
-          // Read directly from memory instead of filesystem
-          if (file.filepath && typeof file.filepath === "string") {
-            const fileContent = fs.readFileSync(file.filepath);
-            attachments.push({
-              filename: file.originalFilename || `attachment-${Date.now()}`,
-              content: fileContent.toString("base64"),
-              encoding: "base64",
-            });
-            // Immediately clean up
-            fs.unlinkSync(file.filepath);
-          } else if (file.buffer) {
-            // Handle in-memory buffer if formidable provides it
-            attachments.push({
-              filename: file.originalFilename || `attachment-${Date.now()}`,
-              content: file.buffer.toString("base64"),
-              encoding: "base64",
-            });
+          console.log(`- Processing: ${file.originalFilename}`);
+          console.log(`  Temp path: ${file.filepath}`);
+          console.log(`  Size: ${(file.size / 1024).toFixed(2)} KB`);
+
+          if (!fs.existsSync(file.filepath)) {
+            console.error("File not found at path:", file.filepath);
+            continue;
           }
+
+          const fileContent = fs.readFileSync(file.filepath);
+          console.log(`  Read ${fileContent.length} bytes`);
+
+          attachments.push({
+            filename: file.originalFilename || `attachment-${Date.now()}`,
+            content: fileContent.toString("base64"),
+            encoding: "base64",
+          });
         } catch (fileError) {
           console.error("Error processing file:", fileError);
         }
