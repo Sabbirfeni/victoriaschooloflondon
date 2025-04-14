@@ -89,7 +89,7 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         from: "info@victoriaschooloflondon.co.uk",
-        to: "contact.sabbirbhuiyan@gmail.com",
+        to: ["applyform.vsl@gmail.com"],
         subject: `Application from ${fields.name}`,
         html: buildEmailHtml(fields),
         attachments,

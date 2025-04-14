@@ -78,7 +78,7 @@ function ApplyPage() {
       });
       const result = await response.json();
       if (result.success) {
-        setSuccessMessage("Your request has been sent successfully!");
+        setSuccessMessage("Your application has been sent successfully!");
         setFormData({
           name: "",
           nationality: "Bangladesh",
@@ -285,9 +285,11 @@ function ApplyPage() {
               <button
                 disabled={loading}
                 type="submit"
-                className="w-full bg-[#fd9800] text-white p-3 rounded-lg hover:bg-[#fd8b00] cursor-pointer"
+                className={`w-full  ${
+                  loading ? "bg-[#fd8b00]" : "bg-[#fd9800]"
+                } text-white p-3 rounded-lg hover:bg-[#fd8b00] cursor-pointer`}
               >
-                {loading ? "Submitting" : "Submit Application"}
+                {loading ? "Application processing..." : "Submit Application"}
               </button>
             </form>
           </div>
