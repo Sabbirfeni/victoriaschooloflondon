@@ -79,16 +79,16 @@ function ApplyPage() {
       const result = await response.json();
       if (result.success) {
         setSuccessMessage("Your request has been sent successfully!");
-        // setFormData({
-        //   name: "",
-        //   nationality: "Bangladesh",
-        //   phone: "",
-        //   address: "",
-        //   email: "",
-        //   qualification: "",
-        //   message: "",
-        //   files: [],
-        // });
+        setFormData({
+          name: "",
+          nationality: "Bangladesh",
+          phone: "",
+          address: "",
+          email: "",
+          qualification: "",
+          message: "",
+          files: [],
+        });
       } else {
         setErrorMessage(result.error);
       }
