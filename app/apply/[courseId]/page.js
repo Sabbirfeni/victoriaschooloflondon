@@ -19,6 +19,10 @@ function ApplyPage() {
     files: [],
   });
 
+  const [loading, setLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -45,6 +49,9 @@ function ApplyPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setErrorMessage("");
+    setSuccessMessage("");
 
     const allData = new FormData();
     allData.append("name", formData.name);
@@ -55,24 +62,37 @@ function ApplyPage() {
     allData.append("qualification", formData.qualification);
     allData.append("message", formData.message);
 
-    // Append the files to the FormData object
-    formData.files.forEach((file) => {
-      allData.append("files", file.content);
-    });
+    try {
+      // Append the files to the FormData object
+      formData.files.forEach((file) => {
+        allData.append("files", file.content);
+      });
 
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/send-email`,
-      {
+      const response = await fetch(`/api/send-email`, {
         method: "POST",
         body: allData, // Send formData instead of JSON
-      }
-    );
+      });
 
-    const result = await response.json();
-    if (result.success) {
-      alert("Email sent successfully!");
-    } else {
-      alert(`Error: ${result.error}`);
+      const result = await response.json();
+      if (result.success) {
+        setSuccessMessage("Your request has been sent successfully!");
+        setFormData({
+          name: "",
+          nationality: "Bangladesh",
+          phone: "",
+          address: "",
+          email: "",
+          qualification: "",
+          message: "",
+          files: [],
+        });
+      } else {
+        setErrorMessage(result.error);
+      }
+    } catch {
+      setErrorMessage("Failed to send the request");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -146,6 +166,7 @@ function ApplyPage() {
               <div>
                 <label className="block text-gray-700">Name*</label>
                 <input
+                  required
                   type="text"
                   placeholder="Your Name"
                   name="name"
@@ -157,6 +178,7 @@ function ApplyPage() {
               <div>
                 <label className="block text-gray-700">Nationality*</label>
                 <select
+                  required
                   name="nationality"
                   value={formData.nationality}
                   onChange={handleChange}
@@ -173,6 +195,7 @@ function ApplyPage() {
               <div>
                 <label className="block text-gray-700">Phone*</label>
                 <input
+                  required
                   type="tel"
                   placeholder="Your Phone Number"
                   name="phone"
@@ -195,6 +218,7 @@ function ApplyPage() {
               <div>
                 <label className="block text-gray-700">Email*</label>
                 <input
+                  required
                   type="email"
                   placeholder="Your Email Address"
                   name="email"
@@ -249,12 +273,15 @@ function ApplyPage() {
                   className="w-full p-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:border-[#fd9800] focus:text-[#fd9800] focus:outline-none h-24"
                 ></textarea>
               </div>
-
+              {successMessage && (
+                <p className="text-green-500">{successMessage}</p>
+              )}
+              {errorMessage && <p className="text-red-500">{errorMessage}</p>}
               <button
                 type="submit"
                 className="w-full bg-[#fd9800] text-white p-3 rounded-lg hover:bg-[#fd8b00] cursor-pointer"
               >
-                Submit Application
+                {loading ? "Submitting" : "Submit Application"}
               </button>
             </form>
           </div>

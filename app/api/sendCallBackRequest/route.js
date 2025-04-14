@@ -25,6 +25,8 @@ export async function POST(req) {
       `,
     });
 
+    console.log("Resend email response:", emailResponse);
+
     return new Response(
       JSON.stringify({ success: true, message: "Email sent successfully" }),
       { status: 200 }
