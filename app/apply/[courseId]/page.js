@@ -63,6 +63,13 @@ function ApplyPage() {
     allData.append("qualification", formData.qualification);
     allData.append("message", formData.message);
 
+    // Course data
+    allData.append("courseName", course.courseName);
+    allData.append("university", course.university);
+    allData.append("campus", course.campus);
+    allData.append("tuitionFees", course.tuitionFees);
+    allData.append("scholarship", course.scholarship);
+
     try {
       // Append the files to the FormData object
       formData.files.forEach((file) => {

@@ -66,8 +66,20 @@ export async function POST(req) {
   }
 
   // Extract fields
-  const { name, nationality, phone, address, email, qualification, message } =
-    fields;
+  const {
+    name,
+    nationality,
+    phone,
+    address,
+    email,
+    qualification,
+    message,
+    courseName,
+    university,
+    campus,
+    tuitionFees,
+    scholarship,
+  } = fields;
 
   try {
     // Send email using Resend or another service
@@ -83,15 +95,22 @@ export async function POST(req) {
         to: "contact.sabbirbhuiyan@gmail.com",
         subject: `Application from ${name}`,
         html: `
-          <h2>Course Application</h2>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Nationality:</strong> ${nationality}</p>
-          <p><strong>Phone:</strong> ${phone}</p>
-          <p><strong>Address:</strong> ${address}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Qualification:</strong> ${qualification}</p>
-          <p><strong>Message:</strong> ${message}</p>
-        `,
+        <h2>Course Application</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Nationality:</strong> ${nationality}</p>
+        <p><strong>Address:</strong> ${address}</p>
+        <p><strong>Qualification:</strong> ${qualification}</p>
+        <p><strong>Message:</strong> ${message}</p>
+        <hr />
+        <h3>Course Information</h3>
+        <p><strong>Course:</strong> ${courseName}</p>
+        <p><strong>University:</strong> ${university}</p>
+        <p><strong>Campus:</strong> ${campus}</p>
+        <p><strong>Tuition Fees:</strong> ${tuitionFees}</p>
+        <p><strong>Scholarship:</strong> ${scholarship}</p>
+      `,
         attachments: files.map((file) => ({
           filename: file.filename,
           content: fs.readFileSync(file.filePath).toString("base64"),
