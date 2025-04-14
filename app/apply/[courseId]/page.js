@@ -71,7 +71,7 @@ function ApplyPage() {
     // The endpoint should match your API file name
 
     try {
-      const response = await fetch("/api/test-upload", {
+      const response = await fetch("/api/send-email", {
         method: "POST",
         body: allData,
         // Don't set Content-Type header - browser will set it with boundary
