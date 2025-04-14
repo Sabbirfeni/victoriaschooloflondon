@@ -59,7 +59,7 @@ function ApplyPage() {
     formData.files.forEach((file) => {
       allData.append("files", file.content);
     });
-    console.log(`${process.env.NEXT_PUBLIC_API_URL}/api/send-email`);
+
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/api/send-email`,
       {
