@@ -1,24 +1,45 @@
-import { NextApiRequest, NextApiResponse } from "next";
 import formidable from "formidable";
-import fs from "fs";
-import path from "path";
+import { createReadStream } from "fs";
+import { Readable } from "stream";
 import fetch from "node-fetch";
-
-// Create uploads directory if needed
-const UPLOAD_DIR = path.join(process.cwd(), "uploads");
-if (!fs.existsSync(UPLOAD_DIR)) {
-  fs.mkdirSync(UPLOAD_DIR, { recursive: true });
-}
 
 export const config = {
   api: {
-    bodyParser: false, // Disable Next.js body parser
-    externalResolver: true, // Important for Vercel
+    bodyParser: false,
   },
 };
 
+function parseForm(req) {
+  return new Promise((resolve, reject) => {
+    const form = formidable({
+      multiples: true,
+      maxFileSize: 25 * 1024 * 1024, // 25MB
+      keepExtensions: true,
+    });
+
+    form.parse(req, (err, fields, files) => {
+      if (err) reject(err);
+      else resolve({ fields, files });
+    });
+  });
+}
+
+function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const stream = file.filepath
+      ? createReadStream(file.filepath)
+      : Readable.from(file.buffer || []);
+
+    const chunks = [];
+    stream.on("data", (chunk) => chunks.push(chunk));
+    stream.on("error", reject);
+    stream.on("end", () => {
+      resolve(Buffer.concat(chunks).toString("base64"));
+    });
+  });
+}
+
 export default async function handler(req, res) {
-  // Handle CORS preflight
   if (req.method === "OPTIONS") {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
@@ -26,54 +47,40 @@ export default async function handler(req, res) {
     return res.status(200).end();
   }
 
-  // Only allow POST requests
   if (req.method !== "POST") {
     res.setHeader("Allow", ["POST"]);
-    return res.status(405).json({
-      error: "Method Not Allowed",
-      allowedMethods: ["POST"],
-    });
+    return res.status(405).json({ error: "Method Not Allowed" });
   }
 
   try {
-    // Parse form data
-    const form = formidable({
-      multiples: true,
-      keepExtensions: true,
-      uploadDir: UPLOAD_DIR,
-      maxFileSize: 20 * 1024 * 1024, // 20MB
-      filename: (name, ext) => `${name}-${Date.now()}${ext}`,
-    });
+    console.log("Starting request processing");
+    const { fields, files } = await parseForm(req);
+    console.log("Form parsed successfully");
 
-    const [fields, files] = await new Promise((resolve, reject) => {
-      form.parse(req, (err, fields, files) => {
-        if (err) reject(err);
-        else resolve([fields, files]);
-      });
-    });
+    if (!files?.file) {
+      console.warn("No files received in request");
+      return res.status(400).json({ error: "No files received" });
+    }
 
-    // Process attachments
+    const fileList = Array.isArray(files.file) ? files.file : [files.file];
+    console.log(`Processing ${fileList.length} files`);
+
     const attachments = [];
-    if (files?.file) {
-      const fileList = Array.isArray(files.file) ? files.file : [files.file];
-
-      for (const file of fileList) {
-        try {
-          const fileContent = fs.readFileSync(file.filepath);
-          attachments.push({
-            filename: file.originalFilename || `attachment-${Date.now()}`,
-            content: fileContent.toString("base64"),
-            encoding: "base64",
-          });
-          // Clean up immediately
-          fs.unlinkSync(file.filepath);
-        } catch (fileError) {
-          console.error("File processing error:", fileError);
-        }
+    for (const file of fileList) {
+      try {
+        console.log(`Processing file: ${file.originalFilename}`);
+        const content = await fileToBase64(file);
+        attachments.push({
+          filename: file.originalFilename || `attachment-${Date.now()}`,
+          content,
+          encoding: "base64",
+        });
+      } catch (error) {
+        console.error("Error processing file:", error);
       }
     }
 
-    // Send email via Resend
+    console.log("Sending email with attachments");
     const emailRes = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -84,23 +91,7 @@ export default async function handler(req, res) {
         from: "info@victoriaschooloflondon.co.uk",
         to: "contact.sabbirbhuiyan@gmail.com",
         subject: `Application from ${fields.name}`,
-        html: `
-        <h2>Course Application</h2>
-        <p><strong>Name:</strong> ${fields.name}</p>
-        <p><strong>Email:</strong> ${fields.email}</p>
-        <p><strong>Phone:</strong> ${fields.phone}</p>
-        <p><strong>Nationality:</strong> ${fields.nationality}</p>
-        <p><strong>Address:</strong> ${fields.address}</p>
-        <p><strong>Qualification:</strong> ${fields.qualification}</p>
-        <p><strong>Message:</strong> ${fields.message}</p>
-        <hr />
-        <h3>Course Information</h3>
-        <p><strong>Course:</strong> ${fields.courseName}</p>
-        <p><strong>University:</strong> ${fields.university}</p>
-        <p><strong>Campus:</strong> ${fields.campus}</p>
-        <p><strong>Tuition Fees:</strong> ${fields.tuitionFees}</p>
-        <p><strong>Scholarship:</strong> ${fields.scholarship}</p>
-      `,
+        html: buildEmailHtml(fields),
         attachments,
       }),
     });
@@ -110,19 +101,27 @@ export default async function handler(req, res) {
       throw new Error(`Email failed: ${error}`);
     }
 
-    return res.status(200).json({ success: true });
+    return res.json({ success: true });
   } catch (error) {
     console.error("API Error:", error);
     return res.status(500).json({
-      success: false,
       error: error.message,
-      // Only include stack in development
-      ...(process.env.NODE_ENV === "development" && { stack: error.stack }),
+      stack: process.env.NODE_ENV === "development" ? error.stack : undefined,
     });
   }
 }
 
-// // pages/api/send-email.ts
+function buildEmailHtml(fields) {
+  return `
+    <h2>Course Application</h2>
+    ${Object.entries(fields)
+      .filter(([key]) => key !== "file")
+      .map(([key, value]) => `<p><strong>${key}:</strong> ${value}</p>`)
+      .join("")}
+  `;
+}
+
+// // API - POST - pages/api/send-email.ts
 // import fs from "fs";
 // import path from "path";
 // import formidable from "formidable";
@@ -286,8 +285,8 @@ export default async function handler(req, res) {
 // }
 // --------------------------------------------
 // --------------------------------------------
-// Previous solution (api/send-email/route.js)
 
+// Previous solution - API - POST - (api/send-email/route.js)
 // import { NextResponse } from "next/server";
 // import fs from "fs";
 // import path from "path";
