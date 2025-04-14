@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useParams } from "next/navigation";
 import countries from "@/all-countries";
 import courses from "@/database/courses";
+import Navbar from "@/app/components/Navbar";
 
 function ApplyPage() {
   const { courseId } = useParams();
@@ -98,6 +99,7 @@ function ApplyPage() {
 
   return (
     <>
+      <Navbar />
       <header className="relative h-[100px] sm:h-[150px] bg-cover bg-center bg-[#fd9800] flex items-center justify-center text-black">
         {/* Overlay for better text readability */}
         <h1 className="relative text-3xl sm:text-4xl font-bold text-center px-4">
