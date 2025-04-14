@@ -79,7 +79,7 @@ export async function POST(req) {
         Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "noreply@resend.dev",
+        from: "info@victoriaschooloflondon.co.uk",
         to: "contact.sabbirbhuiyan@gmail.com",
         subject: `Application from ${name}`,
         html: `
