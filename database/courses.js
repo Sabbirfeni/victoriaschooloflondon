@@ -1326,6 +1326,50 @@ const courses = [
     scholarship: "TBA",
     tuitionFees: "€3900",
   },
+
+        {
+    courseId: 128,
+    courseName: "GLOBAL MBA+MARKETING",
+    country: "Spain",
+    university: "Ascencia Valencia",
+    campus: "Spain",
+    level: "Postgraduate",
+    scholarship: "TBA",
+    tuitionFees: "€6000",
+  },
+       {
+    courseId: 129,
+    courseName: "MS in Teacher of Primary Education",
+    country: "Spain",
+    university: "Ascencia Valencia",
+    campus: "Spain",
+    level: "Postgraduate",
+    scholarship: "TBA",
+    tuitionFees: "€6000",
+  },
+         {
+    courseId: 130,
+    courseName: "MS in Administration and Finance",
+    country: "Spain",
+    university: "Ascencia Valencia",
+    campus: "Spain",
+    level: "Postgraduate",
+    scholarship: "TBA",
+    tuitionFees: "€6000",
+  },
+         {
+    courseId: 131,
+    courseName: "MS in Web Application Development",
+    country: "Spain",
+    university: "Ascencia Valencia",
+    campus: "Spain",
+    level: "Postgraduate",
+    scholarship: "TBA",
+    tuitionFees: "€6000",
+  },
+
+  
+  
   
     
 ];
