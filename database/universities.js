@@ -66,8 +66,36 @@ const universities = [
   {
     country: "New Zealand",
     name: "Pacific International Hotel Management School",
-    logo: "https://www.brighton.ac.uk/images/logo-university-of-brighton.jpg",
-    profile:"https://www.ascencia-business-school.mt/",
+    logo: "/pihms-logo-transparent.png",
+    profile:"https://pihms.ac.nz/",
+  },
+
+   {
+    country: "New Zealand",
+    name: "Unitec Institute of Technology",
+    logo: "/unitec-institute-of-technology-logo-png_seeklogo-352310.png",
+    profile:"https://www.unitec.ac.nz/",
+  },
+
+    {
+    country: "New Zealand",
+    name: "University of Waikato",
+    logo: "/images (1).png",
+    profile:"https://www.waikato.ac.nz/",
+  },
+
+      {
+    country: "New Zealand",
+    name: "Southern Institute of Technology",
+    logo: "/Southern_Institute_of_Technology_(New_Zealand)_logo.jpg",
+    profile:"https://www.sit.ac.nz/",
+  },
+
+        {
+    country: "New Zealand",
+    name: "University of Canterbury",
+    logo: "/University-of-Canterbury.jpg",
+    profile:"https://www.canterbury.ac.nz/",
   },
   
 ];
