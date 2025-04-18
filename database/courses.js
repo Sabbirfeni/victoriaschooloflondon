@@ -1368,15 +1368,28 @@ const courses = [
     tuitionFees: "€6000",
   },
 
+  {
     courseId: 132,
-    courseName:
-      "Honours Bachelor of Applied Arts in Social Justice & Legal Studies",
+    courseName:"Honours Bachelor of Applied Arts in Social Justice & Legal Studies",
     country: "CANADA",
     university: "St. Clair College",
     campus: "Skilled Trades Regional Training Centre",
     level: "Undergraduate",
     scholarship: "Up to $1000",
     tuitionFees: "$15931",
+
+  },
+
+   {
+    courseId: 133,
+    courseName: "Bachelor of business",
+    country: "Australia",
+    university: "Asia Pacific International College",
+    campus: "Brisbane",
+    level: "Undergraduate",
+    scholarship: "TBA",
+    tuitionFees: "$14,400 AUD",
+  },
 
   
   
