@@ -97,6 +97,43 @@ const universities = [
     logo: "/University-of-Canterbury.jpg",
     profile:"https://www.canterbury.ac.nz/",
   },
+
+          {
+    country: "Australia",
+    name: "University of Canberra",
+    logo: "/canberra.png",
+    profile:"https://www.canberra.edu.au/",
+  },
+
+            {
+    country: "Australia",
+    name: "University of Tasmania",
+    logo: "/tasmania.png",
+    profile:"https://www.utas.edu.au/",
+  },
+
+              {
+    country: "Australia",
+    name: "Victoria University",
+    logo: "/victoria.jpg",
+    profile:"https://www.vu.edu.au/",
+  },
+
+                {
+    country: "Australia",
+    name: "APAC Australia",
+    logo: "/images.jpeg",
+    profile:"https://apac.edu.au/",
+  },
+
+                  {
+    country: "Australia",
+    name: "University of Western Australia",
+    logo: "/The-University-of-Western-Australia-logo-profile.jpg",
+    profile:"https://www.uwa.edu.au/",
+  },
+
+  
   
 ];
 
