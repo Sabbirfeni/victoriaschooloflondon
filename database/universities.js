@@ -64,65 +64,12 @@ const universities = [
     profile:"https://www.ascencia-business-school.mt/",
   },
   {
-    country: "United Kingdom",
-    name: "University of Brighton",
-    // logo: "https://www.brighton.ac.uk/images/logo-university-of-brighton.jpg",
+    country: "New Zealand",
+    name: "Pacific International Hotel Management School",
+    logo: "https://www.brighton.ac.uk/images/logo-university-of-brighton.jpg",
+    profile:"https://www.ascencia-business-school.mt/",
   },
-  {
-    country: "United Kingdom",
-    name: "University of Bradford",
-    // logo: "https://www.bradford.ac.uk/images/logos/uni-bradford-logo.png",
-  },
-  {
-    country: "Canada",
-    name: "Kwantlen Polytechnic University",
-    // logo: "https://upload.wikimedia.org/wikipedia/en/f/f7/Kwantlen_Polytechnic_University_Logo.png",
-  },
-  {
-    country: "Cyprus",
-    name: "Cyprus West University",
-    // logo: "https://www.cwu.edu.tr/wp-content/uploads/2019/07/cwu-logo.png",
-  },
-  {
-    country: "Australia",
-    name: "Canterbury Institute of Management",
-    // logo: "https://www.cim.edu.au/wp-content/uploads/2020/06/CIM-logo.jpg",
-  },
-  {
-    country: "United Kingdom",
-    name: "University of Derby",
-    // logo: "https://www.derby.ac.uk/media/derbyacuk/images/logos/uod-logo.jpg",
-  },
-  {
-    country: "United Kingdom",
-    name: "University of Derby",
-    // logo: "https://www.derby.ac.uk/media/derbyacuk/images/logos/uod-logo.jpg",
-  },
-  {
-    country: "United Kingdom",
-    name: "University of Essex",
-    // logo: "https://www.essex.ac.uk/-/media/images/logos/university-of-essex-logo.jpg",
-  },
-  {
-    country: "Australia",
-    name: "University of Melbourne",
-    // logo: "https://brand.unimelb.edu.au/__data/assets/image/0005/1926747/unimelb-logo.jpg",
-  },
-  {
-    country: "Germany",
-    name: "Technical University of Munich",
-    // logo: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Logo_TUM.svg",
-  },
-  {
-    country: "Canada",
-    name: "University of Toronto",
-    // logo: "https://brand.utoronto.ca/wp-content/uploads/2017/01/University-of-Toronto-Master-Logo.png",
-  },
-  {
-    country: "Spain",
-    name: "University of Barcelona",
-    // logo: "https://upload.wikimedia.org/wikipedia/commons/5/54/University-of-Barcelona-logo.png",
-  },
+  
 ];
 
 export default universities;
