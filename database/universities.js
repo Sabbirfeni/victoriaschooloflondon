@@ -3,29 +3,25 @@ const universities = [
     country: "United Kingdom",
     name: "Birmingham City University",
     logo: "/Birmingham_City_University_Logo.png",
-    profile:
-      "https://victoriaschooloflondon.co.uk/university-finding-2/birmingham-city-university/",
+    profile:"https://victoriaschooloflondon.co.uk/university-finding-2/birmingham-city-university/",
   },
   {
     country: "United Kingdom",
     name: "Coventry University",
     logo: "/images.png",
-    profile:
-      "https://victoriaschooloflondon.co.uk/university-finding-2/coventry-university/",
+    profile:"https://victoriaschooloflondon.co.uk/university-finding-2/coventry-university/",
   },
   {
     country: "United Kingdom",
     name: "De Montfort University",
     logo: "/de-montfort-university-logo-vector.png",
-    profile:
-      "https://victoriaschooloflondon.co.uk/university-finding-2/de-montfort-university/",
+    profile:"https://victoriaschooloflondon.co.uk/university-finding-2/de-montfort-university/",
   },
   {
     country: "United Kingdom",
     name: "Northumbria University London",
     logo: "/Northumbria_University_Logo.png",
-    profile:
-      "https://victoriaschooloflondon.co.uk/university-finding-2/northumbria-university-london/",
+    profile:"https://victoriaschooloflondon.co.uk/university-finding-2/northumbria-university-london/",
   },
   {
     country: "Polnad",
