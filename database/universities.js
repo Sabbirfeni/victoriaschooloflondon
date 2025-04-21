@@ -47,18 +47,7 @@ const universities = [
     logo: "/malta-univesity.jpg",
     profile:"https://gbs.edu.mt/",
   },
-  {
-    country: "Malta",
-    name: "University of Malta",
-    logo: "/malta-univesity-3.jpg",
-    profile:"https://www.um.edu.mt/",
-  },
-  {
-    country: "Malta",
-    name: "Ascencia Business School Malta",
-    logo: "/malta-univesity-2.jpg",
-    profile:"https://www.ascencia-business-school.mt/",
-  },
+
   {
     country: "New Zealand",
     name: "Pacific International Hotel Management School",
