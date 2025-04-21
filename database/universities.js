@@ -5,6 +5,44 @@ const universities = [
     logo: "/Birmingham_City_University_Logo.png",
     profile:"https://victoriaschooloflondon.co.uk/university-finding-2/birmingham-city-university/",
   },
+
+
+
+   {
+    country: "Polnad",
+    name: "Vistula University",
+    logo: "/vistula-poland.jpg",
+     profile:"https://vistula.edu.pl/en",
+  },
+
+      {
+    country: "France",
+    name: "Schiller International University",
+    logo: "/schiller-usa.png",
+    profile:"https://www.schiller.edu/campuses/paris/",
+  },
+
+    {
+    country: "Malta",
+    name: "GBS Malta",
+    logo: "/malta-univesity.jpg",
+    profile:"https://gbs.edu.mt/",
+  },
+
+   {
+    country: "New Zealand",
+    name: "Pacific International Hotel Management School",
+    logo: "/pihms-logo-transparent.png",
+    profile:"https://pihms.ac.nz/",
+  },
+
+            {
+    country: "Australia",
+    name: "University of Canberra",
+    logo: "/canberra.png",
+    profile:"https://www.canberra.edu.au/",
+  },
+  
   {
     country: "United Kingdom",
     name: "Coventry University",
@@ -23,37 +61,17 @@ const universities = [
     logo: "/Northumbria_University_Logo.png",
     profile:"https://victoriaschooloflondon.co.uk/university-finding-2/northumbria-university-london/",
   },
-  {
-    country: "Polnad",
-    name: "Vistula University",
-    logo: "/vistula-poland.jpg",
-     profile:"https://vistula.edu.pl/en",
-  },
-  {
-    country: "France",
-    name: "Schiller International University",
-    logo: "/schiller-usa.png",
-    profile:"https://www.schiller.edu/campuses/paris/",
-  },
+ 
+
   {
     country: "France",
     name: "École de Management Appliqué",
     logo: "/france-university.png",
     profile:"https://ema.education/en/",
   },
-  {
-    country: "Malta",
-    name: "GBS Malta",
-    logo: "/malta-univesity.jpg",
-    profile:"https://gbs.edu.mt/",
-  },
 
-  {
-    country: "New Zealand",
-    name: "Pacific International Hotel Management School",
-    logo: "/pihms-logo-transparent.png",
-    profile:"https://pihms.ac.nz/",
-  },
+
+ 
 
    {
     country: "New Zealand",
@@ -83,12 +101,7 @@ const universities = [
     profile:"https://www.canterbury.ac.nz/",
   },
 
-          {
-    country: "Australia",
-    name: "University of Canberra",
-    logo: "/canberra.png",
-    profile:"https://www.canberra.edu.au/",
-  },
+
 
             {
     country: "Australia",
