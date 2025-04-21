@@ -1,123 +1,138 @@
 const universities = [
   
- {
+   {
     country: "United Kingdom",
     name: "Birmingham City University",
     logo: "/Birmingham_City_University_Logo.png",
-    profile:
-      "https://victoriaschooloflondon.co.uk/university-finding-2/birmingham-city-university/",
+    profile:"https://victoriaschooloflondon.co.uk/university-finding-2/birmingham-city-university/",
   },
+
+
+
+   {
+    country: "Polnad",
+    name: "Vistula University",
+    logo: "/vistula-poland.jpg",
+     profile:"https://vistula.edu.pl/en",
+  },
+
+      {
+    country: "France",
+    name: "Schiller International University",
+    logo: "/schiller-usa.png",
+    profile:"https://www.schiller.edu/campuses/paris/",
+  },
+
+    {
+    country: "Malta",
+    name: "GBS Malta",
+    logo: "/malta-univesity.jpg",
+    profile:"https://gbs.edu.mt/",
+  },
+
+   {
+    country: "New Zealand",
+    name: "Pacific International Hotel Management School",
+    logo: "/pihms-logo-transparent.png",
+    profile:"https://pihms.ac.nz/",
+  },
+
+            {
+    country: "Australia",
+    name: "University of Canberra",
+    logo: "/canberra.png",
+    profile:"https://www.canberra.edu.au/",
+  },
+  
   {
     country: "United Kingdom",
     name: "Coventry University",
     logo: "/images.png",
-    profile:
-      "https://victoriaschooloflondon.co.uk/university-finding-2/coventry-university/",
+    profile:"https://victoriaschooloflondon.co.uk/university-finding-2/coventry-university/",
   },
   {
     country: "United Kingdom",
     name: "De Montfort University",
     logo: "/de-montfort-university-logo-vector.png",
-    profile:
-      "https://victoriaschooloflondon.co.uk/university-finding-2/de-montfort-university/",
+    profile:"https://victoriaschooloflondon.co.uk/university-finding-2/de-montfort-university/",
   },
   {
     country: "United Kingdom",
     name: "Northumbria University London",
     logo: "/Northumbria_University_Logo.png",
-    profile:
-      "https://victoriaschooloflondon.co.uk/university-finding-2/northumbria-university-london/",
+    profile:"https://victoriaschooloflondon.co.uk/university-finding-2/northumbria-university-london/",
   },
+ 
+
   {
-    country: "United Kingdom",
-    name: "Bangor University",
-    // logo: "https://www.graduatesfirst.com/wp-content/uploads/2021/03/bangor_logo_c1_flush-800x228-1.png",
+    country: "France",
+    name: "École de Management Appliqué",
+    logo: "/france-university.png",
+    profile:"https://ema.education/en/",
   },
-  {
-    country: "United Kingdom",
-    name: "Arden University",
-    // logo: "https://www.arden.ac.uk/sites/default/files/styles/landing_page_banner/public/2020-06/arden-university.jpg",
+
+
+ 
+
+   {
+    country: "New Zealand",
+    name: "Unitec Institute of Technology",
+    logo: "/unitec-institute-of-technology-logo-png_seeklogo-352310.png",
+    profile:"https://www.unitec.ac.nz/",
   },
-  {
-    country: "Germany",
-    name: "Arden University Berlin",
-    // logo: "https://www.arden.ac.uk/sites/default/files/2020-06/arden-university-berlin.jpg",
+
+    {
+    country: "New Zealand",
+    name: "University of Waikato",
+    logo: "/images (1).png",
+    profile:"https://www.waikato.ac.nz/",
   },
-  {
-    country: "United Kingdom",
-    name: "Aston University",
-    // logo: "https://www.aston.ac.uk/sites/default/files/2019-12/Aston%20University%20Logo.jpg",
+
+      {
+    country: "New Zealand",
+    name: "Southern Institute of Technology",
+    logo: "/Southern_Institute_of_Technology_(New_Zealand)_logo.jpg",
+    profile:"https://www.sit.ac.nz/",
   },
-  {
-    country: "Malta",
-    name: "Ascencia Malta",
-    // logo: "https://www.ascencia-business-school.com/wp-content/uploads/2021/03/Ascencia-Logo.png",
+
+        {
+    country: "New Zealand",
+    name: "University of Canterbury",
+    logo: "/University-of-Canterbury.jpg",
+    profile:"https://www.canterbury.ac.nz/",
   },
-  {
-    country: "Spain",
-    name: "Ascencia Valencia",
-    // logo: "https://www.ascencia-business-school.com/wp-content/uploads/2021/03/Ascencia-Logo.png",
-  },
-  {
-    country: "United Kingdom",
-    name: "University of Brighton",
-    // logo: "https://www.brighton.ac.uk/images/logo-university-of-brighton.jpg",
-  },
-  {
-    country: "United Kingdom",
-    name: "University of Bradford",
-    // logo: "https://www.bradford.ac.uk/images/logos/uni-bradford-logo.png",
-  },
-  {
-    country: "Canada",
-    name: "Kwantlen Polytechnic University",
-    // logo: "https://upload.wikimedia.org/wikipedia/en/f/f7/Kwantlen_Polytechnic_University_Logo.png",
-  },
-  {
-    country: "Cyprus",
-    name: "Cyprus West University",
-    // logo: "https://www.cwu.edu.tr/wp-content/uploads/2019/07/cwu-logo.png",
-  },
-  {
+
+
+
+            {
     country: "Australia",
-    name: "Canterbury Institute of Management",
-    // logo: "https://www.cim.edu.au/wp-content/uploads/2020/06/CIM-logo.jpg",
+    name: "University of Tasmania",
+    logo: "/tasmania.png",
+    profile:"https://www.utas.edu.au/",
   },
-  {
-    country: "United Kingdom",
-    name: "University of Derby",
-    // logo: "https://www.derby.ac.uk/media/derbyacuk/images/logos/uod-logo.jpg",
-  },
-  {
-    country: "United Kingdom",
-    name: "University of Derby",
-    // logo: "https://www.derby.ac.uk/media/derbyacuk/images/logos/uod-logo.jpg",
-  },
-  {
-    country: "United Kingdom",
-    name: "University of Essex",
-    // logo: "https://www.essex.ac.uk/-/media/images/logos/university-of-essex-logo.jpg",
-  },
-  {
+
+              {
     country: "Australia",
-    name: "University of Melbourne",
-    // logo: "https://brand.unimelb.edu.au/__data/assets/image/0005/1926747/unimelb-logo.jpg",
+    name: "Victoria University",
+    logo: "/victoria.jpg",
+    profile:"https://www.vu.edu.au/",
   },
-  {
-    country: "Germany",
-    name: "Technical University of Munich",
-    // logo: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Logo_TUM.svg",
+
+                {
+    country: "Australia",
+    name: "APAC Australia",
+    logo: "/images.jpeg",
+    profile:"https://apac.edu.au/",
   },
-  {
-    country: "Canada",
-    name: "University of Toronto",
-    // logo: "https://brand.utoronto.ca/wp-content/uploads/2017/01/University-of-Toronto-Master-Logo.png",
+
+                  {
+    country: "Australia",
+    name: "University of Western Australia",
+    logo: "/The-University-of-Western-Australia-logo-profile.jpg",
+    profile:"https://www.uwa.edu.au/",
   },
-  {
-    country: "Spain",
-    name: "University of Barcelona",
-    // logo: "https://upload.wikimedia.org/wikipedia/commons/5/54/University-of-Barcelona-logo.png",
-  },
+
+
 
   
 ];
