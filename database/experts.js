@@ -16,7 +16,8 @@ const experts = [
     title: "Co-Founder",
     image: "/Polash.png",
     // email: "jahir1ahammed@gmail.com",
-    email: "sabbirholybangla@gmail.com",
+    email: "jahir1ahammed@gmail.com",
+    //sabbirholybangla@gmail.com
     profile: "",
   },
   {
