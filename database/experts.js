@@ -5,8 +5,8 @@ const experts = [
     country: "United Kingdom",
     title: "International Admission Officer",
     image: "/Sahed Iqbal.png",
-    // email: "sahed@victoriaschooloflondon.co.uk",
-    email: "contact.sabbirbhuiyan@gmail.com",
+    email: "sahed@victoriaschooloflondon.co.uk",
+    //email: "contact.sabbirbhuiyan@gmail.com",
     profile: "",
   },
   {
