@@ -1,7 +1,7 @@
 const experts = [
   {
     id: 1,
-    name: "Sahed Iqbale",
+    name: "Sahed Iqbal",
     country: "United Kingdom",
     title: "International Admission Officer",
     image: "/Sahed Iqbal.png",
@@ -16,7 +16,7 @@ const experts = [
     title: "Co-Founder",
     image: "/Polash.png",
     // email: "jahir1ahammed@gmail.com",
-    email: "jahir1ahammed@gmail.com",
+    email: "info.victoriaschooloflondon@gmail.com",
     //sabbirholybangla@gmail.com
     profile: "",
   },
