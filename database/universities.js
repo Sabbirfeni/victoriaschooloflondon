@@ -20,6 +20,13 @@ const universities = [
     profile:"https://victoriaschooloflondon.co.uk/university-finding-2/northumbria-university-london/",
   },
 
+     {
+    country: "United Kingdom",
+    name: "Coventry University",
+    logo: "/images.png",
+    profile:"https://victoriaschooloflondon.co.uk/university-finding-2/coventry-university/",
+  },
+
 
 
    {
@@ -57,13 +64,6 @@ const universities = [
     profile:"https://www.canberra.edu.au/",
   },
   
-  {
-    country: "United Kingdom",
-    name: "Coventry University",
-    logo: "/images.png",
-    profile:"https://victoriaschooloflondon.co.uk/university-finding-2/coventry-university/",
-  },
-
  
 
   {
