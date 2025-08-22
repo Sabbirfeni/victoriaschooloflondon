@@ -104,13 +104,6 @@ const UniversitiesPage = () => {
                 {country}
               </option>
             ))}
-
-            <option value="United Kingdom">United Kingdom</option>
-            <option value="Germany">Germany</option>
-            <option value="Malta">Malta</option>
-            <option value="Spain">Spain</option>
-            <option value="Cyprus">Cyprus</option>
-            <option value="Australia">Australia</option>
           </select>
           <input
             type="text"
